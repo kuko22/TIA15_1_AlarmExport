@@ -33,6 +33,46 @@
             this.button_ExportAlarms = new System.Windows.Forms.Button();
             this.button_SearchProject = new System.Windows.Forms.Button();
             this.checkedListBox_Lang = new System.Windows.Forms.CheckedListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox_AbortTextCode = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox_AbortHMIClassName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox_Custom3HMIClassName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox_PauseTextCode = new System.Windows.Forms.TextBox();
+            this.textBox_FinishTextCode = new System.Windows.Forms.TextBox();
+            this.textBox_SlowTextCode = new System.Windows.Forms.TextBox();
+            this.textBox_WarningTextCode = new System.Windows.Forms.TextBox();
+            this.textBox_Custom1TextCode = new System.Windows.Forms.TextBox();
+            this.textBox_Custom2TextCode = new System.Windows.Forms.TextBox();
+            this.textBox_Custom3TextCode = new System.Windows.Forms.TextBox();
+            this.textBox_PauseHMIClassName = new System.Windows.Forms.TextBox();
+            this.textBox_FinishHMIClassName = new System.Windows.Forms.TextBox();
+            this.textBox_SlowHMIClassName = new System.Windows.Forms.TextBox();
+            this.textBox_Custom1HMIClassName = new System.Windows.Forms.TextBox();
+            this.textBox_Custom2HMIClassName = new System.Windows.Forms.TextBox();
+            this.textBox_WarningHMIClassName = new System.Windows.Forms.TextBox();
+            this.checkBox_AbortDefaultAlarmClass = new System.Windows.Forms.CheckBox();
+            this.checkBox_PauseDefaultAlarmClass = new System.Windows.Forms.CheckBox();
+            this.checkBox_FinishDefaultAlarmClass = new System.Windows.Forms.CheckBox();
+            this.checkBox_SlowDefaultAlarmClass = new System.Windows.Forms.CheckBox();
+            this.checkBox_WarningDefaultAlarmClass = new System.Windows.Forms.CheckBox();
+            this.checkBox_Custom2DefaultAlarmClass = new System.Windows.Forms.CheckBox();
+            this.checkBox_Custom1DefaultAlarmClass = new System.Windows.Forms.CheckBox();
+            this.checkBox_Custom3DefaultAlarmClass = new System.Windows.Forms.CheckBox();
+            this.comboBox_SourceLangForAlarmCode = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.progressBar_Process = new System.Windows.Forms.ProgressBar();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox_ProjectPath
@@ -79,23 +119,419 @@
             this.checkedListBox_Lang.FormattingEnabled = true;
             this.checkedListBox_Lang.Items.AddRange(new object[] {
             "[sk-SK]",
-            "[en-US]"});
+            "[en-US]",
+            "[ru-RU]"});
             this.checkedListBox_Lang.Location = new System.Drawing.Point(334, 38);
             this.checkedListBox_Lang.Name = "checkedListBox_Lang";
             this.checkedListBox_Lang.Size = new System.Drawing.Size(120, 49);
             this.checkedListBox_Lang.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Abort";
+            // 
+            // textBox_AbortTextCode
+            // 
+            this.textBox_AbortTextCode.Location = new System.Drawing.Point(60, 29);
+            this.textBox_AbortTextCode.Name = "textBox_AbortTextCode";
+            this.textBox_AbortTextCode.Size = new System.Drawing.Size(70, 20);
+            this.textBox_AbortTextCode.TabIndex = 5;
+            this.textBox_AbortTextCode.Text = "A";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_AbortTextCode, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_AbortHMIClassName, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_Custom3HMIClassName, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_PauseTextCode, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_FinishTextCode, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_SlowTextCode, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_WarningTextCode, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_Custom1TextCode, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_Custom2TextCode, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_Custom3TextCode, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_PauseHMIClassName, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_FinishHMIClassName, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_SlowHMIClassName, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_Custom1HMIClassName, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_Custom2HMIClassName, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_WarningHMIClassName, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_AbortDefaultAlarmClass, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_PauseDefaultAlarmClass, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_FinishDefaultAlarmClass, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_SlowDefaultAlarmClass, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_WarningDefaultAlarmClass, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_Custom2DefaultAlarmClass, 3, 7);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_Custom1DefaultAlarmClass, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_Custom3DefaultAlarmClass, 3, 8);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(21, 101);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 9;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(307, 235);
+            this.tableLayoutPanel1.TabIndex = 9;
+            // 
+            // textBox_AbortHMIClassName
+            // 
+            this.textBox_AbortHMIClassName.Location = new System.Drawing.Point(138, 29);
+            this.textBox_AbortHMIClassName.Name = "textBox_AbortHMIClassName";
+            this.textBox_AbortHMIClassName.Size = new System.Drawing.Size(70, 20);
+            this.textBox_AbortHMIClassName.TabIndex = 6;
+            this.textBox_AbortHMIClassName.Text = "ABORT";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(60, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 26);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Code in Alarm\r\nText ($X)";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(138, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 26);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Alarm Class Name \r\nin HMI";
+            // 
+            // textBox_Custom3HMIClassName
+            // 
+            this.textBox_Custom3HMIClassName.Location = new System.Drawing.Point(138, 211);
+            this.textBox_Custom3HMIClassName.Name = "textBox_Custom3HMIClassName";
+            this.textBox_Custom3HMIClassName.Size = new System.Drawing.Size(70, 20);
+            this.textBox_Custom3HMIClassName.TabIndex = 26;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Pause";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Finish";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Slow";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 130);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Warining";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 156);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Custom 1";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 182);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 13);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Custom 2";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 208);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Custom 3";
+            // 
+            // textBox_PauseTextCode
+            // 
+            this.textBox_PauseTextCode.Location = new System.Drawing.Point(60, 55);
+            this.textBox_PauseTextCode.Name = "textBox_PauseTextCode";
+            this.textBox_PauseTextCode.Size = new System.Drawing.Size(70, 20);
+            this.textBox_PauseTextCode.TabIndex = 16;
+            this.textBox_PauseTextCode.Text = "P";
+            // 
+            // textBox_FinishTextCode
+            // 
+            this.textBox_FinishTextCode.Location = new System.Drawing.Point(60, 81);
+            this.textBox_FinishTextCode.Name = "textBox_FinishTextCode";
+            this.textBox_FinishTextCode.Size = new System.Drawing.Size(70, 20);
+            this.textBox_FinishTextCode.TabIndex = 17;
+            this.textBox_FinishTextCode.Text = "F";
+            // 
+            // textBox_SlowTextCode
+            // 
+            this.textBox_SlowTextCode.Location = new System.Drawing.Point(60, 107);
+            this.textBox_SlowTextCode.Name = "textBox_SlowTextCode";
+            this.textBox_SlowTextCode.Size = new System.Drawing.Size(70, 20);
+            this.textBox_SlowTextCode.TabIndex = 18;
+            this.textBox_SlowTextCode.Text = "S";
+            // 
+            // textBox_WarningTextCode
+            // 
+            this.textBox_WarningTextCode.Location = new System.Drawing.Point(60, 133);
+            this.textBox_WarningTextCode.Name = "textBox_WarningTextCode";
+            this.textBox_WarningTextCode.Size = new System.Drawing.Size(70, 20);
+            this.textBox_WarningTextCode.TabIndex = 19;
+            this.textBox_WarningTextCode.Text = "W";
+            // 
+            // textBox_Custom1TextCode
+            // 
+            this.textBox_Custom1TextCode.Location = new System.Drawing.Point(60, 159);
+            this.textBox_Custom1TextCode.Name = "textBox_Custom1TextCode";
+            this.textBox_Custom1TextCode.Size = new System.Drawing.Size(70, 20);
+            this.textBox_Custom1TextCode.TabIndex = 20;
+            // 
+            // textBox_Custom2TextCode
+            // 
+            this.textBox_Custom2TextCode.Location = new System.Drawing.Point(60, 185);
+            this.textBox_Custom2TextCode.Name = "textBox_Custom2TextCode";
+            this.textBox_Custom2TextCode.Size = new System.Drawing.Size(70, 20);
+            this.textBox_Custom2TextCode.TabIndex = 21;
+            // 
+            // textBox_Custom3TextCode
+            // 
+            this.textBox_Custom3TextCode.Location = new System.Drawing.Point(60, 211);
+            this.textBox_Custom3TextCode.Name = "textBox_Custom3TextCode";
+            this.textBox_Custom3TextCode.Size = new System.Drawing.Size(70, 20);
+            this.textBox_Custom3TextCode.TabIndex = 22;
+            // 
+            // textBox_PauseHMIClassName
+            // 
+            this.textBox_PauseHMIClassName.Location = new System.Drawing.Point(138, 55);
+            this.textBox_PauseHMIClassName.Name = "textBox_PauseHMIClassName";
+            this.textBox_PauseHMIClassName.Size = new System.Drawing.Size(70, 20);
+            this.textBox_PauseHMIClassName.TabIndex = 23;
+            this.textBox_PauseHMIClassName.Text = "PAUSE";
+            // 
+            // textBox_FinishHMIClassName
+            // 
+            this.textBox_FinishHMIClassName.Location = new System.Drawing.Point(138, 81);
+            this.textBox_FinishHMIClassName.Name = "textBox_FinishHMIClassName";
+            this.textBox_FinishHMIClassName.Size = new System.Drawing.Size(70, 20);
+            this.textBox_FinishHMIClassName.TabIndex = 24;
+            this.textBox_FinishHMIClassName.Text = "FINISH";
+            // 
+            // textBox_SlowHMIClassName
+            // 
+            this.textBox_SlowHMIClassName.Location = new System.Drawing.Point(138, 107);
+            this.textBox_SlowHMIClassName.Name = "textBox_SlowHMIClassName";
+            this.textBox_SlowHMIClassName.Size = new System.Drawing.Size(70, 20);
+            this.textBox_SlowHMIClassName.TabIndex = 25;
+            this.textBox_SlowHMIClassName.Text = "RUNSLOW";
+            // 
+            // textBox_Custom1HMIClassName
+            // 
+            this.textBox_Custom1HMIClassName.Location = new System.Drawing.Point(138, 159);
+            this.textBox_Custom1HMIClassName.Name = "textBox_Custom1HMIClassName";
+            this.textBox_Custom1HMIClassName.Size = new System.Drawing.Size(70, 20);
+            this.textBox_Custom1HMIClassName.TabIndex = 27;
+            // 
+            // textBox_Custom2HMIClassName
+            // 
+            this.textBox_Custom2HMIClassName.Location = new System.Drawing.Point(138, 185);
+            this.textBox_Custom2HMIClassName.Name = "textBox_Custom2HMIClassName";
+            this.textBox_Custom2HMIClassName.Size = new System.Drawing.Size(70, 20);
+            this.textBox_Custom2HMIClassName.TabIndex = 29;
+            // 
+            // textBox_WarningHMIClassName
+            // 
+            this.textBox_WarningHMIClassName.Location = new System.Drawing.Point(138, 133);
+            this.textBox_WarningHMIClassName.Name = "textBox_WarningHMIClassName";
+            this.textBox_WarningHMIClassName.Size = new System.Drawing.Size(70, 20);
+            this.textBox_WarningHMIClassName.TabIndex = 28;
+            this.textBox_WarningHMIClassName.Text = "WARNING";
+            // 
+            // checkBox_AbortDefaultAlarmClass
+            // 
+            this.checkBox_AbortDefaultAlarmClass.AutoSize = true;
+            this.checkBox_AbortDefaultAlarmClass.Location = new System.Drawing.Point(239, 29);
+            this.checkBox_AbortDefaultAlarmClass.Name = "checkBox_AbortDefaultAlarmClass";
+            this.checkBox_AbortDefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_AbortDefaultAlarmClass.TabIndex = 30;
+            this.checkBox_AbortDefaultAlarmClass.UseVisualStyleBackColor = true;
+            this.checkBox_AbortDefaultAlarmClass.CheckStateChanged += new System.EventHandler(this.checkBox_xDefaultAlarmClass_CheckStateChanged);
+            // 
+            // checkBox_PauseDefaultAlarmClass
+            // 
+            this.checkBox_PauseDefaultAlarmClass.AutoSize = true;
+            this.checkBox_PauseDefaultAlarmClass.Location = new System.Drawing.Point(239, 55);
+            this.checkBox_PauseDefaultAlarmClass.Name = "checkBox_PauseDefaultAlarmClass";
+            this.checkBox_PauseDefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_PauseDefaultAlarmClass.TabIndex = 31;
+            this.checkBox_PauseDefaultAlarmClass.UseVisualStyleBackColor = true;
+            this.checkBox_PauseDefaultAlarmClass.CheckStateChanged += new System.EventHandler(this.checkBox_xDefaultAlarmClass_CheckStateChanged);
+            // 
+            // checkBox_FinishDefaultAlarmClass
+            // 
+            this.checkBox_FinishDefaultAlarmClass.AutoSize = true;
+            this.checkBox_FinishDefaultAlarmClass.Location = new System.Drawing.Point(239, 81);
+            this.checkBox_FinishDefaultAlarmClass.Name = "checkBox_FinishDefaultAlarmClass";
+            this.checkBox_FinishDefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_FinishDefaultAlarmClass.TabIndex = 32;
+            this.checkBox_FinishDefaultAlarmClass.UseVisualStyleBackColor = true;
+            this.checkBox_FinishDefaultAlarmClass.CheckStateChanged += new System.EventHandler(this.checkBox_xDefaultAlarmClass_CheckStateChanged);
+            // 
+            // checkBox_SlowDefaultAlarmClass
+            // 
+            this.checkBox_SlowDefaultAlarmClass.AutoSize = true;
+            this.checkBox_SlowDefaultAlarmClass.Location = new System.Drawing.Point(239, 107);
+            this.checkBox_SlowDefaultAlarmClass.Name = "checkBox_SlowDefaultAlarmClass";
+            this.checkBox_SlowDefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_SlowDefaultAlarmClass.TabIndex = 33;
+            this.checkBox_SlowDefaultAlarmClass.UseVisualStyleBackColor = true;
+            this.checkBox_SlowDefaultAlarmClass.CheckStateChanged += new System.EventHandler(this.checkBox_xDefaultAlarmClass_CheckStateChanged);
+            // 
+            // checkBox_WarningDefaultAlarmClass
+            // 
+            this.checkBox_WarningDefaultAlarmClass.AutoSize = true;
+            this.checkBox_WarningDefaultAlarmClass.Location = new System.Drawing.Point(239, 133);
+            this.checkBox_WarningDefaultAlarmClass.Name = "checkBox_WarningDefaultAlarmClass";
+            this.checkBox_WarningDefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_WarningDefaultAlarmClass.TabIndex = 34;
+            this.checkBox_WarningDefaultAlarmClass.UseVisualStyleBackColor = true;
+            this.checkBox_WarningDefaultAlarmClass.CheckStateChanged += new System.EventHandler(this.checkBox_xDefaultAlarmClass_CheckStateChanged);
+            // 
+            // checkBox_Custom2DefaultAlarmClass
+            // 
+            this.checkBox_Custom2DefaultAlarmClass.AutoSize = true;
+            this.checkBox_Custom2DefaultAlarmClass.Location = new System.Drawing.Point(239, 185);
+            this.checkBox_Custom2DefaultAlarmClass.Name = "checkBox_Custom2DefaultAlarmClass";
+            this.checkBox_Custom2DefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_Custom2DefaultAlarmClass.TabIndex = 35;
+            this.checkBox_Custom2DefaultAlarmClass.UseVisualStyleBackColor = true;
+            this.checkBox_Custom2DefaultAlarmClass.CheckStateChanged += new System.EventHandler(this.checkBox_xDefaultAlarmClass_CheckStateChanged);
+            // 
+            // checkBox_Custom1DefaultAlarmClass
+            // 
+            this.checkBox_Custom1DefaultAlarmClass.AutoSize = true;
+            this.checkBox_Custom1DefaultAlarmClass.Location = new System.Drawing.Point(239, 159);
+            this.checkBox_Custom1DefaultAlarmClass.Name = "checkBox_Custom1DefaultAlarmClass";
+            this.checkBox_Custom1DefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_Custom1DefaultAlarmClass.TabIndex = 36;
+            this.checkBox_Custom1DefaultAlarmClass.UseVisualStyleBackColor = true;
+            this.checkBox_Custom1DefaultAlarmClass.CheckStateChanged += new System.EventHandler(this.checkBox_xDefaultAlarmClass_CheckStateChanged);
+            // 
+            // checkBox_Custom3DefaultAlarmClass
+            // 
+            this.checkBox_Custom3DefaultAlarmClass.AutoSize = true;
+            this.checkBox_Custom3DefaultAlarmClass.Location = new System.Drawing.Point(239, 211);
+            this.checkBox_Custom3DefaultAlarmClass.Name = "checkBox_Custom3DefaultAlarmClass";
+            this.checkBox_Custom3DefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_Custom3DefaultAlarmClass.TabIndex = 37;
+            this.checkBox_Custom3DefaultAlarmClass.UseVisualStyleBackColor = true;
+            this.checkBox_Custom3DefaultAlarmClass.CheckStateChanged += new System.EventHandler(this.checkBox_xDefaultAlarmClass_CheckStateChanged);
+            // 
+            // comboBox_SourceLangForAlarmCode
+            // 
+            this.comboBox_SourceLangForAlarmCode.FormattingEnabled = true;
+            this.comboBox_SourceLangForAlarmCode.Items.AddRange(new object[] {
+            "[sk-SK]",
+            "[en-US]",
+            "[ru-RU]"});
+            this.comboBox_SourceLangForAlarmCode.Location = new System.Drawing.Point(334, 130);
+            this.comboBox_SourceLangForAlarmCode.Name = "comboBox_SourceLangForAlarmCode";
+            this.comboBox_SourceLangForAlarmCode.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_SourceLangForAlarmCode.TabIndex = 10;
+            this.comboBox_SourceLangForAlarmCode.SelectedIndexChanged += new System.EventHandler(this.comboBox_SourceLangForAlarmCode_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(331, 101);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(148, 26);
+            this.label11.TabIndex = 30;
+            this.label11.Text = "In witch Alarm Language Text\r\nis Alarm Code:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(260, 101);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 26);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Default\r\nAlarm Class";
+            // 
+            // progressBar_Process
+            // 
+            this.progressBar_Process.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar_Process.Location = new System.Drawing.Point(0, 427);
+            this.progressBar_Process.Name = "progressBar_Process";
+            this.progressBar_Process.Size = new System.Drawing.Size(788, 23);
+            this.progressBar_Process.TabIndex = 31;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(788, 450);
+            this.Controls.Add(this.progressBar_Process);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.comboBox_SourceLangForAlarmCode);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.checkedListBox_Lang);
             this.Controls.Add(this.button_SearchProject);
             this.Controls.Add(this.button_ExportAlarms);
             this.Controls.Add(this.textBox_ProjectPath);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.Text = "TIA Portal 15.1 Export Alarms";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,6 +544,45 @@
         private System.Windows.Forms.Button button_ExportAlarms;
         private System.Windows.Forms.Button button_SearchProject;
         private System.Windows.Forms.CheckedListBox checkedListBox_Lang;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox_AbortTextCode;
+        private System.Windows.Forms.TextBox textBox_AbortHMIClassName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox_Custom3HMIClassName;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox_PauseTextCode;
+        private System.Windows.Forms.TextBox textBox_FinishTextCode;
+        private System.Windows.Forms.TextBox textBox_SlowTextCode;
+        private System.Windows.Forms.TextBox textBox_WarningTextCode;
+        private System.Windows.Forms.TextBox textBox_Custom1TextCode;
+        private System.Windows.Forms.TextBox textBox_Custom2TextCode;
+        private System.Windows.Forms.TextBox textBox_Custom3TextCode;
+        private System.Windows.Forms.TextBox textBox_PauseHMIClassName;
+        private System.Windows.Forms.TextBox textBox_FinishHMIClassName;
+        private System.Windows.Forms.TextBox textBox_SlowHMIClassName;
+        private System.Windows.Forms.TextBox textBox_Custom1HMIClassName;
+        private System.Windows.Forms.TextBox textBox_Custom2HMIClassName;
+        private System.Windows.Forms.TextBox textBox_WarningHMIClassName;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox_SourceLangForAlarmCode;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckBox checkBox_AbortDefaultAlarmClass;
+        private System.Windows.Forms.CheckBox checkBox_PauseDefaultAlarmClass;
+        private System.Windows.Forms.CheckBox checkBox_FinishDefaultAlarmClass;
+        private System.Windows.Forms.CheckBox checkBox_SlowDefaultAlarmClass;
+        private System.Windows.Forms.CheckBox checkBox_WarningDefaultAlarmClass;
+        private System.Windows.Forms.CheckBox checkBox_Custom2DefaultAlarmClass;
+        private System.Windows.Forms.CheckBox checkBox_Custom1DefaultAlarmClass;
+        private System.Windows.Forms.CheckBox checkBox_Custom3DefaultAlarmClass;
+        private System.Windows.Forms.ProgressBar progressBar_Process;
     }
 }
 

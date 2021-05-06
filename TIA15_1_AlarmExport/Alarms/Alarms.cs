@@ -32,10 +32,10 @@ namespace TIA15_1_AlarmExport
         {
             this.Text = new List<LanguageText>();
             this.Offset = 0;
-            this.AlarmClass = "";
+            this.AlarmClass = new AlarmClass("ABORT","A");
         }
 
-        public Alarm(List<LanguageText> Text, int Offset, String AlarmClass)
+        public Alarm(List<LanguageText> Text, int Offset, AlarmClass AlarmClass)
         {
             this.Text = Text;
             this.Offset = Offset;
@@ -49,7 +49,10 @@ namespace TIA15_1_AlarmExport
         /// Bit offset in DWORD (TAG)
         /// </summary>
         public int Offset;
-        public String AlarmClass;
+        /// <summary>
+        /// Alarm clast, Alarm code in Alarm Text and Alarm Class Name in HMI
+        /// </summary>
+        public AlarmClass AlarmClass;
     }
 
     public class AlarmTag

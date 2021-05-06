@@ -4,11 +4,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Diagnostics;
 
 namespace TIA15_1_AlarmExport
 {
     public static class XmlReaders
     {
+        public static string SourceLangAlarmClass;
+        public static AlarmClass DefaultAlarmClass;
+        public static List<AlarmClass> AlarmClasses = new List<AlarmClass>();
+
+        public static AlarmClass FindAlarmClass(List<LanguageText> langText, List<AlarmClass> AlarmClasses, string SourceLangAlarmClass)
+        {
+            AlarmClass ret = new AlarmClass();
+            try
+            {
+                LanguageText _lt = langText.Find(lt => lt.Language.Equals(SourceLangAlarmClass));
+                if (_lt != null)
+                    ret = AlarmClasses.Find(ac =>
+                    {
+                        if (ac.TextCode == "" || ac.HMIAlarmClass == "")
+                            return false;
+                        return _lt.Text.Contains(" $" + ac.TextCode);
+                    }
+                    );
+
+            }
+            catch (Exception ex)
+            {
+                Debug.Print("\n"+ex.Message);
+                return new AlarmClass();
+            }
+            if (ret == null)
+                ret = new AlarmClass();
+            return ret;
+        }
+        public static List<LanguageText> DeleteCode(List<LanguageText> langText)
+        {
+            List<LanguageText> ret = new List<LanguageText>();
+            foreach(LanguageText lt in langText)
+            {
+                string s = lt.Text;
+                int startIndex = lt.Text.IndexOf(" $");
+                if (startIndex>=0)
+                    s=lt.Text.Remove(startIndex);
+                ret.Add(new LanguageText(lt.Language, s));
+            }
+            return ret;
+        }
         public static UDTAlarms ReadxmlUDT(string path)
         {
             XmlDocument xmlDoc = new XmlDocument(); // Create an XML document object
@@ -57,7 +100,11 @@ namespace TIA15_1_AlarmExport
                         default:
                             throw new Exception("Offset error (" + offset.ToString() + ")");
                     }
-                    a.Add(new Alarm(langText, _offset, "Error_1"));
+
+                    AlarmClass _ac = XmlReaders.FindAlarmClass(langText, AlarmClasses, SourceLangAlarmClass);
+                    langText = XmlReaders.DeleteCode(langText);
+
+                    a.Add(new Alarm(langText, _offset, _ac));
                     offset++;
                 }
                 else
@@ -116,6 +163,7 @@ namespace TIA15_1_AlarmExport
                                 List<Alarm> a = new List<Alarm>();
                                 foreach (XmlNode xmlA in Tag.ChildNodes[0])
                                 {
+                                    AlarmClass _alarmClassA = null;
                                     string _dataTypA, _nameA;
                                     _dataTypA = xmlA.Attributes.GetNamedItem("Datatype").Value;
                                     _nameA = xmlA.Attributes.GetNamedItem("Name").Value;
@@ -130,13 +178,20 @@ namespace TIA15_1_AlarmExport
                                                 lang = "[" + comment.Attributes.GetNamedItem("Lang").Value + "]";
                                                 text = comment.InnerText;
                                                 langTextA.Add(new LanguageText(lang, text));
+
+                                                _alarmClassA = FindAlarmClass(langTextA, AlarmClasses, SourceLangAlarmClass);
+                                                langTextA = DeleteCode(langTextA);
                                             }
                                         }
                                     }
                                     if (langTextA.Count == 0)//Comment not exist,then take comments from UDT
                                     {
-                                        langTextA = udtAlarms.Find(x => x.Name.Equals(_dataTyp)).Alarms[offset].Text;
+                                        Alarm _a = udtAlarms.Find(x => x.Name.Equals(_dataTyp)).Alarms[offset];
+                                        langTextA = _a.Text;
+                                        _alarmClassA = _a.AlarmClass;
                                     }
+                                    if (_alarmClassA == null)
+                                        _alarmClassA = new AlarmClass();
                                     if (langTextA.Count > 0 && _dataTypA == "Bool")
                                     {
                                         int _offset = offset;
@@ -151,8 +206,11 @@ namespace TIA15_1_AlarmExport
                                             default:
                                                 throw new Exception("Offset error (" + offset.ToString() + ")");
                                         }
-                                        a.Add(new Alarm(langTextA, _offset, ""));
+
+
+                                        a.Add(new Alarm(langTextA, _offset, _alarmClassA));
                                         offset++;
+
                                     }
                                 }
 
