@@ -72,6 +72,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.progressBar_Process = new System.Windows.Forms.ProgressBar();
+            this.textBox_DBalarms = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox_PLCconnection = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,7 +127,7 @@
             "[ru-RU]"});
             this.checkedListBox_Lang.Location = new System.Drawing.Point(334, 38);
             this.checkedListBox_Lang.Name = "checkedListBox_Lang";
-            this.checkedListBox_Lang.Size = new System.Drawing.Size(120, 49);
+            this.checkedListBox_Lang.Size = new System.Drawing.Size(145, 49);
             this.checkedListBox_Lang.TabIndex = 3;
             // 
             // label1
@@ -196,6 +200,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(307, 235);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
@@ -483,7 +488,7 @@
             "[ru-RU]"});
             this.comboBox_SourceLangForAlarmCode.Location = new System.Drawing.Point(334, 130);
             this.comboBox_SourceLangForAlarmCode.Name = "comboBox_SourceLangForAlarmCode";
-            this.comboBox_SourceLangForAlarmCode.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_SourceLangForAlarmCode.Size = new System.Drawing.Size(145, 21);
             this.comboBox_SourceLangForAlarmCode.TabIndex = 10;
             this.comboBox_SourceLangForAlarmCode.SelectedIndexChanged += new System.EventHandler(this.comboBox_SourceLangForAlarmCode_SelectedIndexChanged);
             // 
@@ -513,11 +518,49 @@
             this.progressBar_Process.Size = new System.Drawing.Size(788, 23);
             this.progressBar_Process.TabIndex = 31;
             // 
+            // textBox_DBalarms
+            // 
+            this.textBox_DBalarms.Location = new System.Drawing.Point(334, 176);
+            this.textBox_DBalarms.Name = "textBox_DBalarms";
+            this.textBox_DBalarms.Size = new System.Drawing.Size(145, 20);
+            this.textBox_DBalarms.TabIndex = 38;
+            this.textBox_DBalarms.Text = "DB_Alarms";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(331, 157);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(123, 13);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "Name of DB with alarms:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(333, 206);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(123, 13);
+            this.label14.TabIndex = 39;
+            this.label14.Text = "Name of PLC conection:";
+            // 
+            // textBox_PLCconnection
+            // 
+            this.textBox_PLCconnection.Location = new System.Drawing.Point(336, 225);
+            this.textBox_PLCconnection.Name = "textBox_PLCconnection";
+            this.textBox_PLCconnection.Size = new System.Drawing.Size(143, 20);
+            this.textBox_PLCconnection.TabIndex = 40;
+            this.textBox_PLCconnection.Text = "D1040A1_RM1.3-40PLC0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 450);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.textBox_PLCconnection);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.textBox_DBalarms);
             this.Controls.Add(this.progressBar_Process);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -583,6 +626,10 @@
         private System.Windows.Forms.CheckBox checkBox_Custom1DefaultAlarmClass;
         private System.Windows.Forms.CheckBox checkBox_Custom3DefaultAlarmClass;
         private System.Windows.Forms.ProgressBar progressBar_Process;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox_DBalarms;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox_PLCconnection;
     }
 }
 

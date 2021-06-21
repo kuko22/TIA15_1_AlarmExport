@@ -113,6 +113,10 @@ namespace TIA15_1_AlarmExport
         {
             var tsk1 = Task.Run(() =>
             {
+                string DBname = textBox_DBalarms.Text;
+                long _NrOfAlarms;
+                string _PLCconnection=textBox_PLCconnection.Text;
+                _NrOfAlarms = 0;
                 progressBar_Process.BeginInvoke(
                        new ThreadStart(() => {
                            progressBar_Process.Minimum = 0; progressBar_Process.Value = 1; progressBar_Process.Maximum = 1000;
@@ -252,8 +256,8 @@ namespace TIA15_1_AlarmExport
                 }
                 PlcBlockSystemGroup b = userSW.BlockGroup;
                 DB_Alarms = new List<PlcBlock>();
-                DB_Alarms.AddRange(ReadPLCblocks("DB_Alarms", b.Blocks));
-                DB_Alarms.AddRange(ReadPLCblocks("DB_Alarms", b.Groups));
+                DB_Alarms.AddRange(ReadPLCblocks(DBname, b.Blocks));
+                DB_Alarms.AddRange(ReadPLCblocks(DBname, b.Groups));
                 //listView_DB_Alarms = new ListView();
                 foreach (var v in DB_Alarms)
                 {
@@ -322,7 +326,7 @@ namespace TIA15_1_AlarmExport
                                 OUTsheet.SetCellValue(index, 3, _prefix + " " + _alarm);
                                 OUTsheet.SetCellValue(index, 4, "");
                                 OUTsheet.SetCellValue(index, 5, alarm.AlarmClass.HMIAlarmClass);
-                                OUTsheet.SetCellValue(index, 6, alarmT.TagName);
+                                OUTsheet.SetCellValue(index, 6, "alm_" + alarmT.TagName);
                                 OUTsheet.SetCellValue(index, 7, alarm.Offset.ToString());
                                 OUTsheet.SetCellValue(index, 8, "<No value>");
                                 OUTsheet.SetCellValue(index, 9, "0");
@@ -332,6 +336,7 @@ namespace TIA15_1_AlarmExport
                                 OUTsheet.SetCellValue(index, 13, "False");
                                 OUTsheet.SetCellValue(index, 14, "<No value>");
 
+                                _NrOfAlarms += 1;
                                 ID++;
                                 index++;
                                 progressBar_Process.BeginInvoke(
@@ -404,9 +409,9 @@ namespace TIA15_1_AlarmExport
                     foreach (AlarmTag alarmT in _tagAlarms)
                     {
 
-                        OUTsheet.SetCellValue(index, 1, alarmT.TagName);
+                        OUTsheet.SetCellValue(index, 1, "alm_"+alarmT.TagName);
                         OUTsheet.SetCellValue(index, 2, "Alarms\\Alarms");
-                        OUTsheet.SetCellValue(index, 3, "D1040A1_RM1.3-40PLC0");
+                        OUTsheet.SetCellValue(index, 3, _PLCconnection);
                         OUTsheet.SetCellValue(index, 4, "<No Value>");
                         OUTsheet.SetCellValue(index, 5, "Array [0..1] of Int");
                         OUTsheet.SetCellValue(index, 6, "4");
@@ -446,8 +451,7 @@ namespace TIA15_1_AlarmExport
                     }
 
                     string path = ProjectpathOnly + "Export\\" + ProjectName.Remove(ProjectName.IndexOf(".ap15_1"), 7);
-                    string name = "DBAlarms";
-                    TagPath = path + "_" + name + ".xlsx";
+                    TagPath = path + "_" + DBname + ".xlsx";
                     workbook.SaveToFile(TagPath, FileFormat.Version2016);
                 }
                 catch (Exception ex)
@@ -456,7 +460,7 @@ namespace TIA15_1_AlarmExport
                 }
                 finally
                 {
-                    if (MessageBox.Show("Alarm file to import HMI alarms: " + AlarmPath + "\n\nTag file to Import Alarm Tags: " + TagPath + "\n\n Open Path?", "DONE", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Amount of Alarms generated: " + _NrOfAlarms + "\n\nAlarm file to import HMI alarms: " + AlarmPath + "\n\nTag file to Import Alarm Tags: " + TagPath + "\n\n Open Path?", "DONE", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         OpenFileDirectory(ProjectpathOnly + "Export\\");
                     }

@@ -67,7 +67,7 @@ namespace TIA15_1_AlarmExport
             List<PlcBlock> data = new List<PlcBlock>();
             foreach (PlcBlock v in group)
             {
-                if (v.ProgrammingLanguage == ProgrammingLanguage.DB && v.Name.Contains(name))
+                if (v.ProgrammingLanguage == ProgrammingLanguage.DB && v.Name.Equals(name))
                     data.Add(v);
             }
             return data;
