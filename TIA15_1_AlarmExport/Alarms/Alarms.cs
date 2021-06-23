@@ -32,14 +32,16 @@ namespace TIA15_1_AlarmExport
         {
             this.Text = new List<LanguageText>();
             this.Offset = 0;
-            this.AlarmClass = new AlarmClass("ABORT","A");
+            this.AlarmClass = new AlarmClass("ABORT","A", "FB_Alarm_Abort");
+            this.AlarmName = "";
         }
 
-        public Alarm(List<LanguageText> Text, int Offset, AlarmClass AlarmClass)
+        public Alarm(List<LanguageText> Text, int Offset, AlarmClass AlarmClass, String AlarmName)
         {
             this.Text = Text;
             this.Offset = Offset;
             this.AlarmClass = AlarmClass;
+            this.AlarmName= AlarmName;
         }
         /// <summary>
         /// Texts in diferent lagunages
@@ -53,17 +55,22 @@ namespace TIA15_1_AlarmExport
         /// Alarm clast, Alarm code in Alarm Text and Alarm Class Name in HMI
         /// </summary>
         public AlarmClass AlarmClass;
+        /// <summary>
+        /// Alarm Tag name
+        /// </summary>
+        public String AlarmName;
     }
 
     public class AlarmTag
     {
-        public AlarmTag(List<LanguageText> Prefix, UDTAlarms udtAlarms, Alarm[] Alarms, String TagName, String TagAddres)
+        public AlarmTag(List<LanguageText> Prefix, UDTAlarms udtAlarms, Alarm[] Alarms, String TagName, String TagAddres, String DBname)
         {
             this.Prefix = Prefix;
             this.udtAlarms = udtAlarms;
             this.Alarms = Alarms;
             this.TagName = TagName;
             this.TagAddres = TagAddres;
+            this.DBname = DBname;
         }
         /// <summary>
         /// Prefix for Alarms.Text
@@ -73,6 +80,7 @@ namespace TIA15_1_AlarmExport
         public Alarm[] Alarms;
         public String TagName;
         public String TagAddres;
+        public String DBname;
     }
     public class UDTAlarms
     {

@@ -39,6 +39,7 @@
             this.textBox_AbortHMIClassName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.textBox_Custom3HMIClassName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -65,12 +66,20 @@
             this.checkBox_FinishDefaultAlarmClass = new System.Windows.Forms.CheckBox();
             this.checkBox_SlowDefaultAlarmClass = new System.Windows.Forms.CheckBox();
             this.checkBox_WarningDefaultAlarmClass = new System.Windows.Forms.CheckBox();
-            this.checkBox_Custom2DefaultAlarmClass = new System.Windows.Forms.CheckBox();
             this.checkBox_Custom1DefaultAlarmClass = new System.Windows.Forms.CheckBox();
+            this.checkBox_Custom2DefaultAlarmClass = new System.Windows.Forms.CheckBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox_AbortFBname = new System.Windows.Forms.TextBox();
             this.checkBox_Custom3DefaultAlarmClass = new System.Windows.Forms.CheckBox();
+            this.textBox_PauseFBname = new System.Windows.Forms.TextBox();
+            this.textBox_FinishFBname = new System.Windows.Forms.TextBox();
+            this.textBox_SlowFBname = new System.Windows.Forms.TextBox();
+            this.textBox_WarningFBname = new System.Windows.Forms.TextBox();
+            this.textBox_Custom1FBname = new System.Windows.Forms.TextBox();
+            this.textBox_Custom2FBname = new System.Windows.Forms.TextBox();
+            this.textBox_Custom3FBname = new System.Windows.Forms.TextBox();
             this.comboBox_SourceLangForAlarmCode = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.progressBar_Process = new System.Windows.Forms.ProgressBar();
             this.textBox_DBalarms = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -124,10 +133,11 @@
             this.checkedListBox_Lang.Items.AddRange(new object[] {
             "[sk-SK]",
             "[en-US]",
-            "[ru-RU]"});
-            this.checkedListBox_Lang.Location = new System.Drawing.Point(334, 38);
+            "[ru-RU]",
+            "[de-DE]"});
+            this.checkedListBox_Lang.Location = new System.Drawing.Point(455, 38);
             this.checkedListBox_Lang.Name = "checkedListBox_Lang";
-            this.checkedListBox_Lang.Size = new System.Drawing.Size(145, 49);
+            this.checkedListBox_Lang.Size = new System.Drawing.Size(145, 79);
             this.checkedListBox_Lang.TabIndex = 3;
             // 
             // label1
@@ -149,7 +159,8 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -159,6 +170,7 @@
             this.tableLayoutPanel1.Controls.Add(this.textBox_AbortHMIClassName, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label12, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox_Custom3HMIClassName, 2, 8);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 3);
@@ -180,14 +192,23 @@
             this.tableLayoutPanel1.Controls.Add(this.textBox_Custom1HMIClassName, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.textBox_Custom2HMIClassName, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.textBox_WarningHMIClassName, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox_AbortDefaultAlarmClass, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox_PauseDefaultAlarmClass, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox_FinishDefaultAlarmClass, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox_SlowDefaultAlarmClass, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox_WarningDefaultAlarmClass, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox_Custom2DefaultAlarmClass, 3, 7);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox_Custom1DefaultAlarmClass, 3, 6);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox_Custom3DefaultAlarmClass, 3, 8);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_AbortDefaultAlarmClass, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_PauseDefaultAlarmClass, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_FinishDefaultAlarmClass, 4, 3);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_SlowDefaultAlarmClass, 4, 4);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_WarningDefaultAlarmClass, 4, 5);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_Custom1DefaultAlarmClass, 4, 6);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_Custom2DefaultAlarmClass, 4, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label15, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_AbortFBname, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox_Custom3DefaultAlarmClass, 4, 8);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_PauseFBname, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_FinishFBname, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_SlowFBname, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_WarningFBname, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_Custom1FBname, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_Custom2FBname, 3, 7);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_Custom3FBname, 3, 8);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(21, 101);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
@@ -200,8 +221,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(307, 235);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(427, 235);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // textBox_AbortHMIClassName
@@ -229,6 +249,15 @@
             this.label3.Size = new System.Drawing.Size(95, 26);
             this.label3.TabIndex = 8;
             this.label3.Text = "Alarm Class Name \r\nin HMI";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(361, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 26);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Default\r\nAlarm Class";
             // 
             // textBox_Custom3HMIClassName
             // 
@@ -402,7 +431,7 @@
             // checkBox_AbortDefaultAlarmClass
             // 
             this.checkBox_AbortDefaultAlarmClass.AutoSize = true;
-            this.checkBox_AbortDefaultAlarmClass.Location = new System.Drawing.Point(239, 29);
+            this.checkBox_AbortDefaultAlarmClass.Location = new System.Drawing.Point(361, 29);
             this.checkBox_AbortDefaultAlarmClass.Name = "checkBox_AbortDefaultAlarmClass";
             this.checkBox_AbortDefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
             this.checkBox_AbortDefaultAlarmClass.TabIndex = 30;
@@ -412,7 +441,7 @@
             // checkBox_PauseDefaultAlarmClass
             // 
             this.checkBox_PauseDefaultAlarmClass.AutoSize = true;
-            this.checkBox_PauseDefaultAlarmClass.Location = new System.Drawing.Point(239, 55);
+            this.checkBox_PauseDefaultAlarmClass.Location = new System.Drawing.Point(361, 55);
             this.checkBox_PauseDefaultAlarmClass.Name = "checkBox_PauseDefaultAlarmClass";
             this.checkBox_PauseDefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
             this.checkBox_PauseDefaultAlarmClass.TabIndex = 31;
@@ -422,7 +451,7 @@
             // checkBox_FinishDefaultAlarmClass
             // 
             this.checkBox_FinishDefaultAlarmClass.AutoSize = true;
-            this.checkBox_FinishDefaultAlarmClass.Location = new System.Drawing.Point(239, 81);
+            this.checkBox_FinishDefaultAlarmClass.Location = new System.Drawing.Point(361, 81);
             this.checkBox_FinishDefaultAlarmClass.Name = "checkBox_FinishDefaultAlarmClass";
             this.checkBox_FinishDefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
             this.checkBox_FinishDefaultAlarmClass.TabIndex = 32;
@@ -432,7 +461,7 @@
             // checkBox_SlowDefaultAlarmClass
             // 
             this.checkBox_SlowDefaultAlarmClass.AutoSize = true;
-            this.checkBox_SlowDefaultAlarmClass.Location = new System.Drawing.Point(239, 107);
+            this.checkBox_SlowDefaultAlarmClass.Location = new System.Drawing.Point(361, 107);
             this.checkBox_SlowDefaultAlarmClass.Name = "checkBox_SlowDefaultAlarmClass";
             this.checkBox_SlowDefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
             this.checkBox_SlowDefaultAlarmClass.TabIndex = 33;
@@ -442,42 +471,112 @@
             // checkBox_WarningDefaultAlarmClass
             // 
             this.checkBox_WarningDefaultAlarmClass.AutoSize = true;
-            this.checkBox_WarningDefaultAlarmClass.Location = new System.Drawing.Point(239, 133);
+            this.checkBox_WarningDefaultAlarmClass.Location = new System.Drawing.Point(361, 133);
             this.checkBox_WarningDefaultAlarmClass.Name = "checkBox_WarningDefaultAlarmClass";
             this.checkBox_WarningDefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
             this.checkBox_WarningDefaultAlarmClass.TabIndex = 34;
             this.checkBox_WarningDefaultAlarmClass.UseVisualStyleBackColor = true;
             this.checkBox_WarningDefaultAlarmClass.CheckStateChanged += new System.EventHandler(this.checkBox_xDefaultAlarmClass_CheckStateChanged);
             // 
-            // checkBox_Custom2DefaultAlarmClass
-            // 
-            this.checkBox_Custom2DefaultAlarmClass.AutoSize = true;
-            this.checkBox_Custom2DefaultAlarmClass.Location = new System.Drawing.Point(239, 185);
-            this.checkBox_Custom2DefaultAlarmClass.Name = "checkBox_Custom2DefaultAlarmClass";
-            this.checkBox_Custom2DefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_Custom2DefaultAlarmClass.TabIndex = 35;
-            this.checkBox_Custom2DefaultAlarmClass.UseVisualStyleBackColor = true;
-            this.checkBox_Custom2DefaultAlarmClass.CheckStateChanged += new System.EventHandler(this.checkBox_xDefaultAlarmClass_CheckStateChanged);
-            // 
             // checkBox_Custom1DefaultAlarmClass
             // 
             this.checkBox_Custom1DefaultAlarmClass.AutoSize = true;
-            this.checkBox_Custom1DefaultAlarmClass.Location = new System.Drawing.Point(239, 159);
+            this.checkBox_Custom1DefaultAlarmClass.Location = new System.Drawing.Point(361, 159);
             this.checkBox_Custom1DefaultAlarmClass.Name = "checkBox_Custom1DefaultAlarmClass";
             this.checkBox_Custom1DefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
             this.checkBox_Custom1DefaultAlarmClass.TabIndex = 36;
             this.checkBox_Custom1DefaultAlarmClass.UseVisualStyleBackColor = true;
             this.checkBox_Custom1DefaultAlarmClass.CheckStateChanged += new System.EventHandler(this.checkBox_xDefaultAlarmClass_CheckStateChanged);
             // 
+            // checkBox_Custom2DefaultAlarmClass
+            // 
+            this.checkBox_Custom2DefaultAlarmClass.AutoSize = true;
+            this.checkBox_Custom2DefaultAlarmClass.Location = new System.Drawing.Point(361, 185);
+            this.checkBox_Custom2DefaultAlarmClass.Name = "checkBox_Custom2DefaultAlarmClass";
+            this.checkBox_Custom2DefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_Custom2DefaultAlarmClass.TabIndex = 35;
+            this.checkBox_Custom2DefaultAlarmClass.UseVisualStyleBackColor = true;
+            this.checkBox_Custom2DefaultAlarmClass.CheckStateChanged += new System.EventHandler(this.checkBox_xDefaultAlarmClass_CheckStateChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(239, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(74, 26);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "Program alarm\r\nFB name";
+            // 
+            // textBox_AbortFBname
+            // 
+            this.textBox_AbortFBname.Location = new System.Drawing.Point(239, 29);
+            this.textBox_AbortFBname.Name = "textBox_AbortFBname";
+            this.textBox_AbortFBname.Size = new System.Drawing.Size(116, 20);
+            this.textBox_AbortFBname.TabIndex = 39;
+            this.textBox_AbortFBname.Text = "FB_Alarm_Abort";
+            // 
             // checkBox_Custom3DefaultAlarmClass
             // 
             this.checkBox_Custom3DefaultAlarmClass.AutoSize = true;
-            this.checkBox_Custom3DefaultAlarmClass.Location = new System.Drawing.Point(239, 211);
+            this.checkBox_Custom3DefaultAlarmClass.Location = new System.Drawing.Point(361, 211);
             this.checkBox_Custom3DefaultAlarmClass.Name = "checkBox_Custom3DefaultAlarmClass";
             this.checkBox_Custom3DefaultAlarmClass.Size = new System.Drawing.Size(15, 14);
             this.checkBox_Custom3DefaultAlarmClass.TabIndex = 37;
             this.checkBox_Custom3DefaultAlarmClass.UseVisualStyleBackColor = true;
             this.checkBox_Custom3DefaultAlarmClass.CheckStateChanged += new System.EventHandler(this.checkBox_xDefaultAlarmClass_CheckStateChanged);
+            // 
+            // textBox_PauseFBname
+            // 
+            this.textBox_PauseFBname.Location = new System.Drawing.Point(239, 55);
+            this.textBox_PauseFBname.Name = "textBox_PauseFBname";
+            this.textBox_PauseFBname.Size = new System.Drawing.Size(116, 20);
+            this.textBox_PauseFBname.TabIndex = 40;
+            this.textBox_PauseFBname.Text = "FB_Alarm_Pause";
+            // 
+            // textBox_FinishFBname
+            // 
+            this.textBox_FinishFBname.Location = new System.Drawing.Point(239, 81);
+            this.textBox_FinishFBname.Name = "textBox_FinishFBname";
+            this.textBox_FinishFBname.Size = new System.Drawing.Size(116, 20);
+            this.textBox_FinishFBname.TabIndex = 41;
+            this.textBox_FinishFBname.Text = "FB_Alarm_Finish";
+            // 
+            // textBox_SlowFBname
+            // 
+            this.textBox_SlowFBname.Location = new System.Drawing.Point(239, 107);
+            this.textBox_SlowFBname.Name = "textBox_SlowFBname";
+            this.textBox_SlowFBname.Size = new System.Drawing.Size(116, 20);
+            this.textBox_SlowFBname.TabIndex = 42;
+            this.textBox_SlowFBname.Text = "FB_Alarm_RunSlow";
+            // 
+            // textBox_WarningFBname
+            // 
+            this.textBox_WarningFBname.Location = new System.Drawing.Point(239, 133);
+            this.textBox_WarningFBname.Name = "textBox_WarningFBname";
+            this.textBox_WarningFBname.Size = new System.Drawing.Size(116, 20);
+            this.textBox_WarningFBname.TabIndex = 43;
+            this.textBox_WarningFBname.Text = "FB_Alarm_Warning";
+            // 
+            // textBox_Custom1FBname
+            // 
+            this.textBox_Custom1FBname.Location = new System.Drawing.Point(239, 159);
+            this.textBox_Custom1FBname.Name = "textBox_Custom1FBname";
+            this.textBox_Custom1FBname.Size = new System.Drawing.Size(116, 20);
+            this.textBox_Custom1FBname.TabIndex = 44;
+            // 
+            // textBox_Custom2FBname
+            // 
+            this.textBox_Custom2FBname.Location = new System.Drawing.Point(239, 185);
+            this.textBox_Custom2FBname.Name = "textBox_Custom2FBname";
+            this.textBox_Custom2FBname.Size = new System.Drawing.Size(116, 20);
+            this.textBox_Custom2FBname.TabIndex = 45;
+            // 
+            // textBox_Custom3FBname
+            // 
+            this.textBox_Custom3FBname.Location = new System.Drawing.Point(239, 211);
+            this.textBox_Custom3FBname.Name = "textBox_Custom3FBname";
+            this.textBox_Custom3FBname.Size = new System.Drawing.Size(116, 20);
+            this.textBox_Custom3FBname.TabIndex = 46;
             // 
             // comboBox_SourceLangForAlarmCode
             // 
@@ -485,8 +584,9 @@
             this.comboBox_SourceLangForAlarmCode.Items.AddRange(new object[] {
             "[sk-SK]",
             "[en-US]",
-            "[ru-RU]"});
-            this.comboBox_SourceLangForAlarmCode.Location = new System.Drawing.Point(334, 130);
+            "[ru-RU]",
+            "[de-DE]"});
+            this.comboBox_SourceLangForAlarmCode.Location = new System.Drawing.Point(457, 156);
             this.comboBox_SourceLangForAlarmCode.Name = "comboBox_SourceLangForAlarmCode";
             this.comboBox_SourceLangForAlarmCode.Size = new System.Drawing.Size(145, 21);
             this.comboBox_SourceLangForAlarmCode.TabIndex = 10;
@@ -495,20 +595,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(331, 101);
+            this.label11.Location = new System.Drawing.Point(454, 127);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(148, 26);
             this.label11.TabIndex = 30;
             this.label11.Text = "In witch Alarm Language Text\r\nis Alarm Code:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(260, 101);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 26);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "Default\r\nAlarm Class";
             // 
             // progressBar_Process
             // 
@@ -520,7 +611,7 @@
             // 
             // textBox_DBalarms
             // 
-            this.textBox_DBalarms.Location = new System.Drawing.Point(334, 176);
+            this.textBox_DBalarms.Location = new System.Drawing.Point(457, 202);
             this.textBox_DBalarms.Name = "textBox_DBalarms";
             this.textBox_DBalarms.Size = new System.Drawing.Size(145, 20);
             this.textBox_DBalarms.TabIndex = 38;
@@ -529,7 +620,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(331, 157);
+            this.label13.Location = new System.Drawing.Point(454, 183);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(123, 13);
             this.label13.TabIndex = 38;
@@ -538,7 +629,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(333, 206);
+            this.label14.Location = new System.Drawing.Point(456, 232);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(123, 13);
             this.label14.TabIndex = 39;
@@ -546,7 +637,7 @@
             // 
             // textBox_PLCconnection
             // 
-            this.textBox_PLCconnection.Location = new System.Drawing.Point(336, 225);
+            this.textBox_PLCconnection.Location = new System.Drawing.Point(459, 251);
             this.textBox_PLCconnection.Name = "textBox_PLCconnection";
             this.textBox_PLCconnection.Size = new System.Drawing.Size(143, 20);
             this.textBox_PLCconnection.TabIndex = 40;
@@ -562,7 +653,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox_DBalarms);
             this.Controls.Add(this.progressBar_Process);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.comboBox_SourceLangForAlarmCode);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -630,6 +720,15 @@
         private System.Windows.Forms.TextBox textBox_DBalarms;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox_PLCconnection;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox_AbortFBname;
+        private System.Windows.Forms.TextBox textBox_PauseFBname;
+        private System.Windows.Forms.TextBox textBox_FinishFBname;
+        private System.Windows.Forms.TextBox textBox_SlowFBname;
+        private System.Windows.Forms.TextBox textBox_WarningFBname;
+        private System.Windows.Forms.TextBox textBox_Custom1FBname;
+        private System.Windows.Forms.TextBox textBox_Custom2FBname;
+        private System.Windows.Forms.TextBox textBox_Custom3FBname;
     }
 }
 

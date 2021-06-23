@@ -104,7 +104,7 @@ namespace TIA15_1_AlarmExport
                     AlarmClass _ac = XmlReaders.FindAlarmClass(langText, AlarmClasses, SourceLangAlarmClass);
                     langText = XmlReaders.DeleteCode(langText);
 
-                    a.Add(new Alarm(langText, _offset, _ac));
+                    a.Add(new Alarm(langText, _offset, _ac, _name));
                     offset++;
                 }
                 else
@@ -132,6 +132,8 @@ namespace TIA15_1_AlarmExport
             XmlNodeList Sections = Interface[0].ChildNodes;
             XmlNodeList Section = Sections[0].ChildNodes;
             XmlNodeList Member = Section[0].ChildNodes;
+            String _DBname = xmlDoc.GetElementsByTagName("Name")[0].InnerText;
+
             List<AlarmTag> ret = new List<AlarmTag>();
             int Addres = 0;
             foreach (XmlNode _member in Member)
@@ -208,7 +210,7 @@ namespace TIA15_1_AlarmExport
                                         }
 
 
-                                        a.Add(new Alarm(langTextA, _offset, _alarmClassA));
+                                        a.Add(new Alarm(langTextA, _offset, _alarmClassA, _nameA));
                                         offset++;
 
                                     }
@@ -222,7 +224,8 @@ namespace TIA15_1_AlarmExport
                                                udtAlarms.Find(x => x.Name.Equals(_dataTyp)),
                                                 ar,
                                                 _name,
-                                                "DB49.DBX"+ Addres.ToString()+".0")
+                                                "DB49.DBX"+ Addres.ToString()+".0"
+                                                , _DBname)
                                         );
                                 }
                                 else

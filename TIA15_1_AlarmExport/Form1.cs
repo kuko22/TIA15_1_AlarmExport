@@ -28,7 +28,7 @@ namespace TIA15_1_AlarmExport
         public Form1()
         {
             InitializeComponent();
-            XmlReaders.DefaultAlarmClass = new AlarmClass("ABORT", "A");
+            XmlReaders.DefaultAlarmClass = new AlarmClass("ABORT", "A", "FB_Alarm_Abort");
 
             _udtAlarms = new List<UDTAlarms>();
             _tagAlarms = new List<AlarmTag>();
@@ -133,14 +133,14 @@ namespace TIA15_1_AlarmExport
                                              }));
                 }
                 XmlReaders.AlarmClasses = new List<AlarmClass>();
-                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_AbortHMIClassName.Text, textBox_AbortTextCode.Text));
-                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_PauseHMIClassName.Text, textBox_PauseTextCode.Text));
-                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_FinishHMIClassName.Text, textBox_FinishTextCode.Text));
-                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_SlowHMIClassName.Text, textBox_SlowTextCode.Text));
-                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_WarningHMIClassName.Text, textBox_WarningTextCode.Text));
-                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_Custom1HMIClassName.Text, textBox_Custom1TextCode.Text));
-                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_Custom2HMIClassName.Text, textBox_Custom2TextCode.Text));
-                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_Custom3HMIClassName.Text, textBox_Custom3TextCode.Text));
+                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_AbortHMIClassName.Text, textBox_AbortTextCode.Text, textBox_AbortFBname.Text));
+                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_PauseHMIClassName.Text, textBox_PauseTextCode.Text, textBox_PauseFBname.Text));
+                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_FinishHMIClassName.Text, textBox_FinishTextCode.Text, textBox_FinishFBname.Text));
+                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_SlowHMIClassName.Text, textBox_SlowTextCode.Text, textBox_SlowFBname.Text));
+                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_WarningHMIClassName.Text, textBox_WarningTextCode.Text, textBox_WarningFBname.Text));
+                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_Custom1HMIClassName.Text, textBox_Custom1TextCode.Text, textBox_Custom1FBname.Text));
+                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_Custom2HMIClassName.Text, textBox_Custom2TextCode.Text, textBox_Custom2FBname.Text));
+                XmlReaders.AlarmClasses.Add(new AlarmClass(textBox_Custom3HMIClassName.Text, textBox_Custom3TextCode.Text, textBox_Custom3FBname.Text));
 
                 #region Find project
                 Debug.Print("\nSearching...");
@@ -446,7 +446,6 @@ namespace TIA15_1_AlarmExport
                         progressBar_Process.BeginInvoke(
                                                  new ThreadStart(() => {
                                                      progressBar_Process.Value = progressBar_Process.Value >= progressBar_Process.Maximum ? 1 : progressBar_Process.Value + 1;
-                                                     button_ExportAlarms.Enabled = button_SearchProject.Enabled = true;
                                                  }));
                     }
 
@@ -458,14 +457,152 @@ namespace TIA15_1_AlarmExport
                 {
                     MessageBox.Show(ex.Message);
                 }
+                #endregion
+                #region FILL OUT HMI ALARM to TextList "GlobalAlarms"
+
+                // declare the application object
+                //Initialize a new Workboook object
+                workbook = new Workbook();
+                //Get the first worksheet
+                OUTsheet = workbook.Worksheets[0];
+                try
+                {
+                    //Header+Values
+                    OUTsheet.Name = "TextList";
+                    OUTsheet.SetCellValue(1, 1, "Name");
+                    OUTsheet.SetCellValue(2, 1, "GlobalAlarms");
+                    OUTsheet.SetCellValue(1, 2, "ListRange");
+                    OUTsheet.SetCellValue(2, 2, "Decimal");
+
+                    int index = 3;
+                    foreach (string lang in Lanuguages)
+                    {
+                        OUTsheet.SetCellValue(1, index, "Comment "+ lang);
+                        OUTsheet.SetCellValue(2, index, "<No value>");
+                        index++;
+                    }
+                    OUTsheet = workbook.CreateEmptySheet("TextListEntry");
+
+                    //Header
+                    OUTsheet.SetCellValue(1, 1, "Parent");
+                    OUTsheet.SetCellValue(1, 2, "From");
+                    OUTsheet.SetCellValue(1, 3, "To");
+                    int LangIndex = 4;
+                    foreach (string lang in Lanuguages)
+                    {
+                        OUTsheet.SetCellValue(1, LangIndex, "Text " + lang);
+                        LangIndex++;
+                    }
+                    //Values
+                    index = 2;
+                    int ID = StartID;
+                    foreach (AlarmTag alarmT in _tagAlarms)
+                    {
+                        foreach (Alarm alarm in alarmT.Alarms)
+                        {
+                            OUTsheet.SetCellValue(index, 1, "GlobalAlarms");
+                            OUTsheet.SetCellValue(index, 2, ID.ToString());
+                            OUTsheet.SetCellValue(index, 3, ID.ToString());
+                            LangIndex = 4;
+                            foreach (string lang in Lanuguages)
+                            {
+                                string _prefix = alarmT.Prefix.Exists(element => element.Language == lang) ?
+                                        alarmT.Prefix.FindLast(element => element.Language == lang).Text :
+                                        "";
+                                string _alarm;
+                                _alarm = alarm.Text.Exists(element => element.Language == lang) ?
+                                    alarm.Text.FindLast(element => element.Language == lang).Text.Replace(@"\p{C}+", String.Empty) :
+                                    "";
+                                OUTsheet.SetCellValue(index, LangIndex, _prefix + " " + _alarm);
+                                LangIndex++;
+                            }
+
+                            ID++;
+                            index++;
+                            progressBar_Process.BeginInvoke(
+                                                     new ThreadStart(() =>
+                                                     {
+                                                         progressBar_Process.Value = progressBar_Process.Value >= progressBar_Process.Maximum ? 1 : progressBar_Process.Value + 1;
+                                                     }));
+                        }
+                    }
+
+                    string path = ProjectpathOnly + "Export\\" + ProjectName.Remove(ProjectName.IndexOf(".ap15_1"), 7);
+                    TagPath = path + "_GlobalAlarms_" + DBname + ".xlsx";
+                    workbook.SaveToFile(TagPath, FileFormat.Version2007);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                #endregion
+                #region Generate OB1_Alarms
+
+                // declare the application object
+                //Initialize a new Workboook object
+                workbook = new Workbook();
+                //Get the first worksheet
+                OUTsheet = workbook.Worksheets[0];
+                try
+                {
+                    string path = ProjectpathOnly + "Export\\" + ProjectName.Remove(ProjectName.IndexOf(".ap15_1"), 7);
+                    TagPath = path + "_OB1_Alarms.scl";
+                    using (StreamWriter FB = File.CreateText(TagPath))
+                    {
+                        FB.Flush();
+                        FB.Write(@"FUNCTION_BLOCK ""OB1_Alarms""
+                                { S7_Optimized_Access:= 'TRUE' }
+                                                VERSION: 0.1
+                                "+"\n");
+                        //Creat Instances
+                        string _instances = "";
+                        string _calls = "";
+                        _instances = "VAR\n";
+                        _calls = "BEGIN\n";
+                        int ID = StartID;
+                        foreach (AlarmTag alarmT in _tagAlarms)
+                        {
+                            foreach (Alarm alarm in alarmT.Alarms)
+                            {
+                                String _fbInsName = @"fbAlm_" + alarmT.TagName + "_" + ID.ToString();
+                                String _AlarmAddress = NormalizeTagName(alarmT.DBname) + "." + NormalizeTagName(alarmT.TagName) + "." + NormalizeTagName(alarm.AlarmName);
+                                _fbInsName = ((_fbInsName.Replace(@"\p{C}+", String.Empty)).Replace(@"-", "_")).Replace(@".", "_");
+
+                                _instances += _fbInsName + @" { ExternalAccessible:= 'False'; ExternalVisible:= 'False'; ExternalWritable:= 'False'} : """ + alarm.AlarmClass.FBname + @""";"+"\n";
+                                _calls += @"#" + _fbInsName + @"(i_bAlarm:=" + _AlarmAddress + @", i_iID:= "+ ID.ToString() + ");\n";
+
+                                ID++;
+                                progressBar_Process.BeginInvoke(
+                                                         new ThreadStart(() =>
+                                                         {
+                                                             progressBar_Process.Value = progressBar_Process.Value >= progressBar_Process.Maximum ? 1 : progressBar_Process.Value + 1;
+                                                         }));
+                            }
+                        }
+
+                        _instances += "END_VAR\n";
+                        _calls += "END_FUNCTION_BLOCK\n";
+                        FB.WriteLine(_instances);
+                        FB.WriteLine(_calls);
+                        FB.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                #endregion
                 finally
                 {
+                    progressBar_Process.BeginInvoke(new ThreadStart(() =>
+                                                            {
+                                                                button_ExportAlarms.Enabled = button_SearchProject.Enabled = true;
+                                                            }));
                     if (MessageBox.Show("Amount of Alarms generated: " + _NrOfAlarms + "\n\nAlarm file to import HMI alarms: " + AlarmPath + "\n\nTag file to Import Alarm Tags: " + TagPath + "\n\n Open Path?", "DONE", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         OpenFileDirectory(ProjectpathOnly + "Export\\");
                     }
                 }
-                #endregion
             });
         }
         private void OpenFileDirectory(string path)
@@ -496,7 +633,7 @@ namespace TIA15_1_AlarmExport
         {
             if (sender is CheckBox)
             {
-                
+                string _FBname = "";
                 string _textCode = "";
                 string _hmiClassName = "";
                 CheckBox cb = sender as CheckBox;
@@ -519,40 +656,58 @@ namespace TIA15_1_AlarmExport
                     case string a when a.Contains("Abort"):
                         _hmiClassName = textBox_AbortHMIClassName.Text;
                         _textCode = textBox_AbortTextCode.Text;
+                        _FBname = textBox_AbortFBname.Text;
                         break;
                     case string p when p.Contains("Pause"):
                         _hmiClassName = textBox_PauseHMIClassName.Text;
                         _textCode = textBox_PauseTextCode.Text;
+                        _FBname = textBox_PauseFBname.Text;
                         break;
                     case string f when f.Contains("Finish"):
                         _hmiClassName = textBox_FinishHMIClassName.Text;
                         _textCode = textBox_FinishTextCode.Text;
+                        _FBname = textBox_FinishFBname.Text;
                         break;
                     case string s when s.Contains("Slow"):
                         _hmiClassName = textBox_SlowHMIClassName.Text;
                         _textCode = textBox_SlowTextCode.Text;
+                        _FBname = textBox_SlowFBname.Text;
                         break;
                     case string w when w.Contains("Warning"):
                         _hmiClassName = textBox_WarningHMIClassName.Text;
                         _textCode = textBox_WarningTextCode.Text;
+                        _FBname = textBox_WarningFBname.Text;
                         break;
                     case string c1 when c1.Contains("Custom1"):
                         _hmiClassName = textBox_Custom1HMIClassName.Text;
                         _textCode = textBox_Custom1TextCode.Text;
+                        _FBname = textBox_Custom1FBname.Text;
                         break;
                     case string c2 when c2.Contains("Custom2"):
                         _hmiClassName = textBox_Custom2HMIClassName.Text;
                         _textCode = textBox_Custom2TextCode.Text;
+                        _FBname = textBox_Custom2FBname.Text;
                         break;
                     case string c3 when c3.Contains("Custom3"):
                         _hmiClassName = textBox_Custom3HMIClassName.Text;
                         _textCode = textBox_Custom3TextCode.Text;
+                        _FBname = textBox_Custom3FBname.Text;
                         break;
                     default:
                         break;
                 }
-                XmlReaders.DefaultAlarmClass = new AlarmClass(_hmiClassName, _textCode);
+                XmlReaders.DefaultAlarmClass = new AlarmClass(_hmiClassName, _textCode, _FBname);
             }
+        }
+
+        private String NormalizeTagName(String TagName)
+        {
+            String ret = TagName;
+            if (TagName.Contains(" ") || TagName.Contains(".")|| TagName.Contains("-")|| TagName.Contains(":")|| TagName.Contains(".")|| TagName.Any(char.IsDigit))
+            {
+                ret = @"""" + TagName + @"""";
+            }
+            return ret;
         }
     }
 }
