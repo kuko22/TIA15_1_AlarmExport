@@ -35,6 +35,8 @@ namespace TIA15_1_AlarmExport
             StartID = 4000;
             CompatibleProjektVersion = new List<string>();
             CompatibleProjektVersion.Add("15.1.0.0");
+            CompatibleProjektVersion.Add("16.0.0.0");
+            fileType = ".ap16";
 
             Debug.Print("Program start:\n");
             string[] args = Environment.GetCommandLineArgs();
@@ -57,17 +59,7 @@ namespace TIA15_1_AlarmExport
                 }
 
                 ProjectVersion = st[0];
-                Debug.Print("Project version: " + ProjectVersion + "\n");
-                bool VersinOK = false;
-                foreach (string s in CompatibleProjektVersion)
-                {
-                    if (string.Equals(s, ProjectVersion))
-                    {
-                        VersinOK = true;
-                        Debug.Print("TIA Portal Project Version Compatible\n");
-                        break;
-                    }
-                }
+                CompatibleVersion(ProjectVersion);
                 Projectpath = st[1];
                 Debug.Print("Project path: " + Projectpath + "\n");
             }
@@ -77,10 +69,39 @@ namespace TIA15_1_AlarmExport
             }
         }
 
+        private bool CompatibleVersion(string ProjectVersion)
+        {
+            Debug.Print("Project version: " + ProjectVersion + "\n");
+            bool _versinOK = false;
+            foreach (string s in CompatibleProjektVersion)
+            {
+                if (string.Equals(s, ProjectVersion))
+                {
+                    switch (ProjectVersion)
+                    {
+                        case "15.1.0.0":
+                            fileType = ".ap15_1";
+                            break;
+                        case "16.0.0.0":
+                            fileType = ".ap16";
+                            break;
+
+                    }
+
+                    _versinOK = true;
+                    Debug.Print("TIA Portal Project Version Compatible\n");
+                    break;
+                }
+            }
+            return _versinOK;
+        }
+
         List<string> CompatibleProjektVersion;
+        string fileType;
         PlcSoftware userSW;
         HmiTarget userHMI;
         int StartID;
+        string SourceLang;
         public String Projectpath { get; set; }
         public String ProjectName { get; set; }
         public String ProjectpathOnly { get; set; }
@@ -116,7 +137,11 @@ namespace TIA15_1_AlarmExport
                 string DBname = textBox_DBalarms.Text;
                 long _NrOfAlarms;
                 string _PLCconnection=textBox_PLCconnection.Text;
+                bool _NoGeneratingEnable = checkBox_NoGeneratingEnable.Checked;
+                string _NoGeneratingText = textBox_NoGeneratingText.Text;
+                string _SourceLang = SourceLang;
                 _NrOfAlarms = 0;
+
                 progressBar_Process.BeginInvoke(
                        new ThreadStart(() => {
                            progressBar_Process.Minimum = 0; progressBar_Process.Value = 1; progressBar_Process.Maximum = 1000;
@@ -189,13 +214,15 @@ namespace TIA15_1_AlarmExport
                         Debug.Print("              Project Path: " + _pro.Path + "- end");
                         if (_pro.Path.ToString().Equals(Projectpath))
                         {
+                            fileType = Projectpath.Remove(0,Projectpath.LastIndexOf("."));
                             Debug.Print("Founded!!!");
                             Found = true;
                             _tiaPortalProject = _pro;
                             break;
                         }
                         progressBar_Process.BeginInvoke(
-                                                 new ThreadStart(() => {
+                                                 new ThreadStart(() =>
+                                                 {
                                                      progressBar_Process.Value = progressBar_Process.Value >= progressBar_Process.Maximum ? 1 : progressBar_Process.Value + 1;
                                                  }));
                     }
@@ -208,6 +235,10 @@ namespace TIA15_1_AlarmExport
                 if (_tiaPortalProject == null)
                 {
                     Debug.Print("Project not founded\n");
+                    progressBar_Process.BeginInvoke(new ThreadStart(() =>
+                    {
+                        button_ExportAlarms.Enabled = button_SearchProject.Enabled = true;
+                    }));
                     return;
                 }
                 Debug.Print("Searhing: Devices/...");
@@ -317,35 +348,43 @@ namespace TIA15_1_AlarmExport
                                     "";
                             foreach (Alarm alarm in alarmT.Alarms)
                             {
-                                OUTsheet.SetCellValue(index, 1, ID.ToString());
-                                OUTsheet.SetCellValue(index, 2, alarmT.TagName + "_" + ID.ToString());
                                 string _alarm;
                                 _alarm = alarm.Text.Exists(element => element.Language == lang) ?
                                     alarm.Text.FindLast(element => element.Language == lang).Text.Replace(@"\p{C}+", String.Empty) :
                                     "";
-                                OUTsheet.SetCellValue(index, 3, _prefix + " " + _alarm);
-                                OUTsheet.SetCellValue(index, 4, "");
-                                OUTsheet.SetCellValue(index, 5, alarm.AlarmClass.HMIAlarmClass);
-                                OUTsheet.SetCellValue(index, 6, "alm_" + alarmT.TagName);
-                                OUTsheet.SetCellValue(index, 7, alarm.Offset.ToString());
-                                OUTsheet.SetCellValue(index, 8, "<No value>");
-                                OUTsheet.SetCellValue(index, 9, "0");
-                                OUTsheet.SetCellValue(index, 10, "<No value>");
-                                OUTsheet.SetCellValue(index, 11, "0");
-                                OUTsheet.SetCellValue(index, 12, "<No value>");
-                                OUTsheet.SetCellValue(index, 13, "False");
-                                OUTsheet.SetCellValue(index, 14, "<No value>");
+                                string _alarmNoGeneretigcheck;
+                                _alarmNoGeneretigcheck = alarm.Text.Exists(element => element.Language == _SourceLang) ?
+                                    alarm.Text.FindLast(element => element.Language == _SourceLang).Text :
+                                    _NoGeneratingText;
+                                if (!_NoGeneratingEnable || !_alarmNoGeneretigcheck.Equals(_NoGeneratingText) )
+                                {
 
-                                _NrOfAlarms += 1;
+                                    OUTsheet.SetCellValue(index, 1, ID.ToString());
+                                    OUTsheet.SetCellValue(index, 2, alarmT.TagName + "_" + ID.ToString());
+                                    OUTsheet.SetCellValue(index, 3, _prefix + " " + _alarm);
+                                    OUTsheet.SetCellValue(index, 4, "");
+                                    OUTsheet.SetCellValue(index, 5, alarm.AlarmClass.HMIAlarmClass);
+                                    OUTsheet.SetCellValue(index, 6, "alm_" + alarmT.TagName);
+                                    OUTsheet.SetCellValue(index, 7, alarm.Offset.ToString());
+                                    OUTsheet.SetCellValue(index, 8, "<No value>");
+                                    OUTsheet.SetCellValue(index, 9, "0");
+                                    OUTsheet.SetCellValue(index, 10, "<No value>");
+                                    OUTsheet.SetCellValue(index, 11, "0");
+                                    OUTsheet.SetCellValue(index, 12, "<No value>");
+                                    OUTsheet.SetCellValue(index, 13, "False");
+                                    OUTsheet.SetCellValue(index, 14, "<No value>");
+
+                                    _NrOfAlarms += 1;
+                                    index++;
+                                }
                                 ID++;
-                                index++;
                                 progressBar_Process.BeginInvoke(
                                                          new ThreadStart(() => {
                                                              progressBar_Process.Value = progressBar_Process.Value >= progressBar_Process.Maximum ? 1 : progressBar_Process.Value + 1;
                                                          }));
                             }
                         }
-                        string path = ProjectpathOnly + "Export\\" + ProjectName.Remove(ProjectName.IndexOf(".ap15_1"), 7);
+                        string path = ProjectpathOnly + "Export\\" + ProjectName.Remove(ProjectName.IndexOf(fileType), fileType.Length);
                         string name = lang.Remove(lang.IndexOf("]"), 1);
                         name = name.Remove(name.IndexOf("["), 1);
                         AlarmPath = path + "_" + name + ".xlsx";
@@ -449,7 +488,7 @@ namespace TIA15_1_AlarmExport
                                                  }));
                     }
 
-                    string path = ProjectpathOnly + "Export\\" + ProjectName.Remove(ProjectName.IndexOf(".ap15_1"), 7);
+                    string path = ProjectpathOnly + "Export\\" + ProjectName.Remove(ProjectName.IndexOf(fileType), fileType.Length);
                     TagPath = path + "_" + DBname + ".xlsx";
                     workbook.SaveToFile(TagPath, FileFormat.Version2016);
                 }
@@ -500,25 +539,31 @@ namespace TIA15_1_AlarmExport
                     {
                         foreach (Alarm alarm in alarmT.Alarms)
                         {
-                            OUTsheet.SetCellValue(index, 1, "GlobalAlarms");
-                            OUTsheet.SetCellValue(index, 2, ID.ToString());
-                            OUTsheet.SetCellValue(index, 3, ID.ToString());
-                            LangIndex = 4;
-                            foreach (string lang in Lanuguages)
+                            string _alarmNoGeneretigcheck;
+                            _alarmNoGeneretigcheck = alarm.Text.Exists(element => element.Language == _SourceLang) ?
+                                alarm.Text.FindLast(element => element.Language == _SourceLang).Text :
+                                _NoGeneratingText;
+                            if (!_NoGeneratingEnable || !_alarmNoGeneretigcheck.Equals(_NoGeneratingText))
                             {
-                                string _prefix = alarmT.Prefix.Exists(element => element.Language == lang) ?
-                                        alarmT.Prefix.FindLast(element => element.Language == lang).Text :
+                                OUTsheet.SetCellValue(index, 1, "GlobalAlarms");
+                                OUTsheet.SetCellValue(index, 2, ID.ToString());
+                                OUTsheet.SetCellValue(index, 3, ID.ToString());
+                                LangIndex = 4;
+                                foreach (string lang in Lanuguages)
+                                {
+                                    string _prefix = alarmT.Prefix.Exists(element => element.Language == lang) ?
+                                            alarmT.Prefix.FindLast(element => element.Language == lang).Text :
+                                            "";
+                                    string _alarm;
+                                    _alarm = alarm.Text.Exists(element => element.Language == lang) ?
+                                        alarm.Text.FindLast(element => element.Language == lang).Text.Replace(@"\p{C}+", String.Empty) :
                                         "";
-                                string _alarm;
-                                _alarm = alarm.Text.Exists(element => element.Language == lang) ?
-                                    alarm.Text.FindLast(element => element.Language == lang).Text.Replace(@"\p{C}+", String.Empty) :
-                                    "";
-                                OUTsheet.SetCellValue(index, LangIndex, _prefix + " " + _alarm);
-                                LangIndex++;
+                                    OUTsheet.SetCellValue(index, LangIndex, _prefix + " " + _alarm);
+                                    LangIndex++;
+                                }
+                                index++;
                             }
-
                             ID++;
-                            index++;
                             progressBar_Process.BeginInvoke(
                                                      new ThreadStart(() =>
                                                      {
@@ -527,7 +572,7 @@ namespace TIA15_1_AlarmExport
                         }
                     }
 
-                    string path = ProjectpathOnly + "Export\\" + ProjectName.Remove(ProjectName.IndexOf(".ap15_1"), 7);
+                    string path = ProjectpathOnly + "Export\\" + ProjectName.Remove(ProjectName.IndexOf(fileType), fileType.Length);
                     TagPath = path + "_GlobalAlarms_" + DBname + ".xlsx";
                     workbook.SaveToFile(TagPath, FileFormat.Version2007);
                 }
@@ -545,7 +590,7 @@ namespace TIA15_1_AlarmExport
                 OUTsheet = workbook.Worksheets[0];
                 try
                 {
-                    string path = ProjectpathOnly + "Export\\" + ProjectName.Remove(ProjectName.IndexOf(".ap15_1"), 7);
+                    string path = ProjectpathOnly + "Export\\" + ProjectName.Remove(ProjectName.IndexOf(fileType), fileType.Length);
                     TagPath = path + "_OB1_Alarms.scl";
                     using (StreamWriter FB = File.CreateText(TagPath))
                     {
@@ -627,6 +672,7 @@ namespace TIA15_1_AlarmExport
         private void comboBox_SourceLangForAlarmCode_SelectedIndexChanged(object sender, EventArgs e)
         {
             XmlReaders.SourceLangAlarmClass = comboBox_SourceLangForAlarmCode.Text;
+            SourceLang = comboBox_SourceLangForAlarmCode.Text;
         }
 
         private void checkBox_xDefaultAlarmClass_CheckStateChanged(object sender, EventArgs e)

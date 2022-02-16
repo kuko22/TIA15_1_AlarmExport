@@ -85,6 +85,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox_PLCconnection = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.checkBox_NoGeneratingEnable = new System.Windows.Forms.CheckBox();
+            this.textBox_NoGeneratingText = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,9 +105,8 @@
             // 
             this.openFileDialog_Project.CheckFileExists = false;
             this.openFileDialog_Project.CheckPathExists = false;
-            this.openFileDialog_Project.FileName = "TIA Porta 15.1 Projcet *.ap15_1";
-            this.openFileDialog_Project.Filter = "TIA Portal 15.1|*.ap15_1|All files|*.*";
-            this.openFileDialog_Project.FilterIndex = 0;
+            this.openFileDialog_Project.FileName = "TIA Porta 15.1 Projcet *.ap15_1|TIA Porta 16 Projcet *.ap16";
+            this.openFileDialog_Project.Filter = "TIA Portal 16|*.ap16|TIA Portal 15.1|*.ap15_1|All files|*.*";
             this.openFileDialog_Project.ValidateNames = false;
             // 
             // button_ExportAlarms
@@ -221,6 +223,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(427, 235);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
@@ -643,11 +646,40 @@
             this.textBox_PLCconnection.TabIndex = 40;
             this.textBox_PLCconnection.Text = "D1040A1_RM1.3-40PLC0";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(456, 286);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(146, 26);
+            this.label16.TabIndex = 41;
+            this.label16.Text = "Text wich will not (containing)\r\ngenerated  as alarm:";
+            // 
+            // checkBox_NoGeneratingEnable
+            // 
+            this.checkBox_NoGeneratingEnable.AutoSize = true;
+            this.checkBox_NoGeneratingEnable.Location = new System.Drawing.Point(588, 301);
+            this.checkBox_NoGeneratingEnable.Name = "checkBox_NoGeneratingEnable";
+            this.checkBox_NoGeneratingEnable.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_NoGeneratingEnable.TabIndex = 47;
+            this.checkBox_NoGeneratingEnable.UseVisualStyleBackColor = true;
+            // 
+            // textBox_NoGeneratingText
+            // 
+            this.textBox_NoGeneratingText.Location = new System.Drawing.Point(459, 318);
+            this.textBox_NoGeneratingText.Name = "textBox_NoGeneratingText";
+            this.textBox_NoGeneratingText.Size = new System.Drawing.Size(143, 20);
+            this.textBox_NoGeneratingText.TabIndex = 48;
+            this.textBox_NoGeneratingText.Text = "Reserve";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 450);
+            this.Controls.Add(this.textBox_NoGeneratingText);
+            this.Controls.Add(this.checkBox_NoGeneratingEnable);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox_PLCconnection);
             this.Controls.Add(this.label13);
@@ -729,6 +761,9 @@
         private System.Windows.Forms.TextBox textBox_Custom1FBname;
         private System.Windows.Forms.TextBox textBox_Custom2FBname;
         private System.Windows.Forms.TextBox textBox_Custom3FBname;
+        private System.Windows.Forms.TextBox textBox_NoGeneratingText;
+        private System.Windows.Forms.CheckBox checkBox_NoGeneratingEnable;
+        private System.Windows.Forms.Label label16;
     }
 }
 
