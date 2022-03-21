@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublicAPI", "PublicAPI", "{ACAFBD30-8B46-4A12-AE08-B57D2EBE582D}"
 	ProjectSection(SolutionItems) = preProject
 		PublicAPI\V16\Siemens.Engineering.dll = PublicAPI\V16\Siemens.Engineering.dll
+		PublicAPI\V17\Siemens.Engineering.dll = PublicAPI\V17\Siemens.Engineering.dll
 	EndProjectSection
 EndProject
 Global

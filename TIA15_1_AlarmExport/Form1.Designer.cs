@@ -106,7 +106,7 @@
             this.openFileDialog_Project.CheckFileExists = false;
             this.openFileDialog_Project.CheckPathExists = false;
             this.openFileDialog_Project.FileName = "TIA Porta 15.1 Projcet *.ap15_1|TIA Porta 16 Projcet *.ap16";
-            this.openFileDialog_Project.Filter = "TIA Portal 16|*.ap16|TIA Portal 15.1|*.ap15_1|All files|*.*";
+            this.openFileDialog_Project.Filter = "TIA Portal 17|*.ap17|TIA Portal 16|*.ap16|TIA Portal 15.1|*.ap15_1|All files|*.*";
             this.openFileDialog_Project.ValidateNames = false;
             // 
             // button_ExportAlarms

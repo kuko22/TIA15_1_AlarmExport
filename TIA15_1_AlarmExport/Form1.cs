@@ -36,6 +36,7 @@ namespace TIA15_1_AlarmExport
             CompatibleProjektVersion = new List<string>();
             CompatibleProjektVersion.Add("15.1.0.0");
             CompatibleProjektVersion.Add("16.0.0.0");
+            CompatibleProjektVersion.Add("17.0.0.0");
             fileType = ".ap16";
 
             Debug.Print("Program start:\n");
@@ -84,6 +85,9 @@ namespace TIA15_1_AlarmExport
                             break;
                         case "16.0.0.0":
                             fileType = ".ap16";
+                            break;
+                        case "17.0.0.0":
+                            fileType = ".ap17";
                             break;
 
                     }
