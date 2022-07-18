@@ -508,6 +508,8 @@ namespace TIA15_1_AlarmExport
                 workbook = new Workbook();
                 //Get the first worksheet
                 OUTsheet = workbook.Worksheets[0];
+                //save not generated alarms
+                List<int> _notGeneratedAlarms = new List<int>();
                 try
                 {
                     //Header+Values
@@ -567,6 +569,10 @@ namespace TIA15_1_AlarmExport
                                 }
                                 index++;
                             }
+                            else
+                            {
+                                _notGeneratedAlarms.Add(ID);
+                            }
                             ID++;
                             progressBar_Process.BeginInvoke(
                                                      new ThreadStart(() =>
@@ -587,6 +593,9 @@ namespace TIA15_1_AlarmExport
                 #endregion
                 #region Generate OB1_Alarms
 
+                uint _maxAlarms = 32*20;//20x modul in one FB
+                uint _AlarmsCount = _maxAlarms;
+                uint _OBcount = 0;
                 // declare the application object
                 //Initialize a new Workboook object
                 workbook = new Workbook();
@@ -595,45 +604,61 @@ namespace TIA15_1_AlarmExport
                 try
                 {
                     string path = ProjectpathOnly + "Export\\" + ProjectName.Remove(ProjectName.IndexOf(fileType), fileType.Length);
-                    TagPath = path + "_OB1_Alarms.scl";
-                    using (StreamWriter FB = File.CreateText(TagPath))
+
+                    string _instances = "";
+                    string _calls = "";
+                    int ID = StartID;
+                    foreach (AlarmTag alarmT in _tagAlarms)
                     {
-                        FB.Flush();
-                        FB.Write(@"FUNCTION_BLOCK ""OB1_Alarms""
-                                { S7_Optimized_Access:= 'TRUE' }
-                                                VERSION: 0.1
-                                "+"\n");
-                        //Creat Instances
-                        string _instances = "";
-                        string _calls = "";
-                        _instances = "VAR\n";
-                        _calls = "BEGIN\n";
-                        int ID = StartID;
-                        foreach (AlarmTag alarmT in _tagAlarms)
+                        foreach (Alarm alarm in alarmT.Alarms)
                         {
-                            foreach (Alarm alarm in alarmT.Alarms)
+                            if (_AlarmsCount >= _maxAlarms)
                             {
+                                //save file
+                                if (_OBcount > 0)
+                                {
+                                    string name = "OB1_Alarms_" + _OBcount.ToString();
+                                    TagPath = path + name + ".scl";
+                                    using (StreamWriter FB = File.CreateText(TagPath))
+                                    {
+                                        FB.Flush();
+                                        FB.Write($"FUNCTION_BLOCK \"{name}\"\n " +
+                                            @"{ S7_Optimized_Access:= 'TRUE' }
+                                        VERSION: 0.1
+                                        " + "\n");
+
+                                        _instances += "END_VAR\n";
+                                        _calls += "END_FUNCTION_BLOCK\n";
+                                        FB.WriteLine(_instances);
+                                        FB.WriteLine(_calls);
+                                        FB.Close();
+                                    }
+                                }
+                                //init new FB
+                                _AlarmsCount = 0;
+                                _OBcount++;
+                                _instances = "VAR\n";
+                                _calls = "BEGIN\n";
+                            }
+                            if (!_notGeneratedAlarms.Exists(element => element == ID))
+                            {
+                                //Creat Instances
                                 String _fbInsName = @"fbAlm_" + alarmT.TagName + "_" + ID.ToString();
                                 String _AlarmAddress = NormalizeTagName(alarmT.DBname) + "." + NormalizeTagName(alarmT.TagName) + "." + NormalizeTagName(alarm.AlarmName);
                                 _fbInsName = ((_fbInsName.Replace(@"\p{C}+", String.Empty)).Replace(@"-", "_")).Replace(@".", "_");
 
-                                _instances += _fbInsName + @" { ExternalAccessible:= 'False'; ExternalVisible:= 'False'; ExternalWritable:= 'False'} : """ + alarm.AlarmClass.FBname + @""";"+"\n";
-                                _calls += @"#" + _fbInsName + @"(i_bAlarm:=" + _AlarmAddress + @", i_iID:= "+ ID.ToString() + ");\n";
+                                _instances += _fbInsName + @" { ExternalAccessible:= 'False'; ExternalVisible:= 'False'; ExternalWritable:= 'False'} : """ + alarm.AlarmClass.FBname + @""";" + "\n";
+                                _calls += @"#" + _fbInsName + @"(i_bAlarm:=" + _AlarmAddress + @", i_iID:= " + ID.ToString() + ");\n";
 
-                                ID++;
-                                progressBar_Process.BeginInvoke(
-                                                         new ThreadStart(() =>
-                                                         {
-                                                             progressBar_Process.Value = progressBar_Process.Value >= progressBar_Process.Maximum ? 1 : progressBar_Process.Value + 1;
-                                                         }));
+                                _AlarmsCount++;
                             }
+                            ID++;
+                            progressBar_Process.BeginInvoke(
+                                                     new ThreadStart(() =>
+                                                     {
+                                                         progressBar_Process.Value = progressBar_Process.Value >= progressBar_Process.Maximum ? 1 : progressBar_Process.Value + 1;
+                                                     }));
                         }
-
-                        _instances += "END_VAR\n";
-                        _calls += "END_FUNCTION_BLOCK\n";
-                        FB.WriteLine(_instances);
-                        FB.WriteLine(_calls);
-                        FB.Close();
                     }
                 }
                 catch (Exception ex)
