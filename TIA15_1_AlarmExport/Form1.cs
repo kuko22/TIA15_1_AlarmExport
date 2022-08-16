@@ -608,6 +608,8 @@ namespace TIA15_1_AlarmExport
                     string _instances = "";
                     string _calls = "";
                     int ID = StartID;
+                    int _FileStartID = 0;
+                    int _FileEndID = 0;
                     foreach (AlarmTag alarmT in _tagAlarms)
                     {
                         foreach (Alarm alarm in alarmT.Alarms)
@@ -617,7 +619,7 @@ namespace TIA15_1_AlarmExport
                                 //save file
                                 if (_OBcount > 0)
                                 {
-                                    string name = "OB1_Alarms_" + _OBcount.ToString();
+                                    string name = "OB1_Alarms_" + _FileStartID.ToString()+"_"+_FileEndID.ToString();//_OBcount.ToString();
                                     TagPath = path + name + ".scl";
                                     using (StreamWriter FB = File.CreateText(TagPath))
                                     {
@@ -636,6 +638,8 @@ namespace TIA15_1_AlarmExport
                                 }
                                 //init new FB
                                 _AlarmsCount = 0;
+                                _FileStartID = 0;
+                                _FileEndID = 0;
                                 _OBcount++;
                                 _instances = "VAR\n";
                                 _calls = "BEGIN\n";
@@ -643,6 +647,8 @@ namespace TIA15_1_AlarmExport
                             if (!_notGeneratedAlarms.Exists(element => element == ID))
                             {
                                 //Creat Instances
+                                if (_FileStartID==0)
+                                    _FileStartID = ID;
                                 String _fbInsName = @"fbAlm_" + alarmT.TagName + "_" + ID.ToString();
                                 String _AlarmAddress = NormalizeTagName(alarmT.DBname) + "." + NormalizeTagName(alarmT.TagName) + "." + NormalizeTagName(alarm.AlarmName);
                                 _fbInsName = ((_fbInsName.Replace(@"\p{C}+", String.Empty)).Replace(@"-", "_")).Replace(@".", "_");
@@ -650,6 +656,7 @@ namespace TIA15_1_AlarmExport
                                 _instances += _fbInsName + @" { ExternalAccessible:= 'False'; ExternalVisible:= 'False'; ExternalWritable:= 'False'} : """ + alarm.AlarmClass.FBname + @""";" + "\n";
                                 _calls += @"#" + _fbInsName + @"(i_bAlarm:=" + _AlarmAddress + @", i_iID:= " + ID.ToString() + ");\n";
 
+                                _FileEndID = ID;
                                 _AlarmsCount++;
                             }
                             ID++;
