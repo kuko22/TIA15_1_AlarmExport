@@ -267,7 +267,7 @@ namespace TIA15_1_AlarmExport
 
                 UDT_Alarms = new List<PlcType>();
                 PlcTypeSystemGroup s = userSW.TypeGroup;
-                UDT_Alarms.AddRange(ReadTypeWithName("UDT_Alarms_", s.Groups));
+                UDT_Alarms.AddRange(ReadTypeWithName("UDT_Alarms_", s.Groups));//Read all UDT Alarms
                 //listView_UDT_Alarms = new ListView();
                 System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(ProjectpathOnly + "Export\\");
                 if (di.Exists)
@@ -279,6 +279,7 @@ namespace TIA15_1_AlarmExport
                         string _file = ProjectpathOnly + "Export\\" + v.Name + ".xml";
                         if (!System.IO.File.Exists(_file))
                         {
+                            //Export all UDT Alarms in to XML File
                             v.Export(new System.IO.FileInfo(_file), Siemens.Engineering.ExportOptions.WithDefaults);
                             _udtAlarms.Add(XmlReaders.ReadxmlUDT(_file));
                         }
@@ -304,8 +305,9 @@ namespace TIA15_1_AlarmExport
                             string _file = ProjectpathOnly + "Export\\" + DB_Alarm.Name + ".xml";
                             if (!System.IO.File.Exists(_file))
                             {
+                                //Export DB alarms as XML File
                                 DB_Alarm.Export(new System.IO.FileInfo(_file), Siemens.Engineering.ExportOptions.WithDefaults);
-                                _tagAlarms.AddRange(XmlReaders.ReadxmlDBAlarms(_file, _udtAlarms));
+                                _tagAlarms.AddRange(XmlReaders.ReadxmlDBAlarms(_file, _udtAlarms, checkBox_UnifiedPanel.Checked?PanelType.WinccUnified:PanelType.WinccAdvance));
                             }
                         }
                         catch (Exception ex)
@@ -330,7 +332,7 @@ namespace TIA15_1_AlarmExport
                         OUTsheet.Name = "DiscreteAlarms";
                         OUTsheet.SetCellValue(1, 1, "ID");
                         OUTsheet.SetCellValue(1, 2, "Name");
-                        OUTsheet.SetCellValue(1, 3, "Alarm text " + lang + ", Alarm text");
+                        OUTsheet.SetCellValue(1, 3,  checkBox_UnifiedPanel.Checked? "Alarm text " + lang + ", Alarm text 1" : "Alarm text " + lang + ", Alarm text");
                         OUTsheet.SetCellValue(1, 4, "FieldInfo [Alarm text]");
                         OUTsheet.SetCellValue(1, 5, "Class");
                         OUTsheet.SetCellValue(1, 6, "Trigger tag");
@@ -456,7 +458,7 @@ namespace TIA15_1_AlarmExport
                         OUTsheet.SetCellValue(index, 2, "Alarms\\Alarms");
                         OUTsheet.SetCellValue(index, 3, _PLCconnection);
                         OUTsheet.SetCellValue(index, 4, "<No Value>");
-                        OUTsheet.SetCellValue(index, 5, "Array [0..1] of Int");
+                        OUTsheet.SetCellValue(index, 5, checkBox_UnifiedPanel.Checked?"Dword": "Array [0..1] of Int");
                         OUTsheet.SetCellValue(index, 6, "4");
                         OUTsheet.SetCellValue(index, 7, "Binary");
                         OUTsheet.SetCellValue(index, 8, "Absolute access");

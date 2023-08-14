@@ -63,13 +63,14 @@ namespace TIA15_1_AlarmExport
 
     public class AlarmTag
     {
-        public AlarmTag(List<LanguageText> Prefix, UDTAlarms udtAlarms, Alarm[] Alarms, String TagName, String TagAddres, String DBname)
+        public AlarmTag(List<LanguageText> Prefix, UDTAlarms udtAlarms, Alarm[] Alarms, String TagName, String TagAddres,String TagType, String DBname)
         {
             this.Prefix = Prefix;
             this.udtAlarms = udtAlarms;
             this.Alarms = Alarms;
             this.TagName = TagName;
             this.TagAddres = TagAddres;
+            this.TagType= TagType;
             this.DBname = DBname;
         }
         /// <summary>
@@ -80,6 +81,7 @@ namespace TIA15_1_AlarmExport
         public Alarm[] Alarms;
         public String TagName;
         public String TagAddres;
+        public String TagType;
         public String DBname;
     }
     public class UDTAlarms

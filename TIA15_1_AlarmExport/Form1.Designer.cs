@@ -88,6 +88,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.checkBox_NoGeneratingEnable = new System.Windows.Forms.CheckBox();
             this.textBox_NoGeneratingText = new System.Windows.Forms.TextBox();
+            this.checkBox_UnifiedPanel = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,7 +137,8 @@
             "[sk-SK]",
             "[en-US]",
             "[ru-RU]",
-            "[de-DE]"});
+            "[de-DE]",
+            "[cs-CZ]"});
             this.checkedListBox_Lang.Location = new System.Drawing.Point(455, 38);
             this.checkedListBox_Lang.Name = "checkedListBox_Lang";
             this.checkedListBox_Lang.Size = new System.Drawing.Size(145, 79);
@@ -429,7 +431,7 @@
             this.textBox_WarningHMIClassName.Name = "textBox_WarningHMIClassName";
             this.textBox_WarningHMIClassName.Size = new System.Drawing.Size(70, 20);
             this.textBox_WarningHMIClassName.TabIndex = 28;
-            this.textBox_WarningHMIClassName.Text = "WARNING";
+            this.textBox_WarningHMIClassName.Text = "WARNING_1";
             // 
             // checkBox_AbortDefaultAlarmClass
             // 
@@ -672,11 +674,22 @@
             this.textBox_NoGeneratingText.TabIndex = 48;
             this.textBox_NoGeneratingText.Text = "Reserve";
             // 
+            // checkBox_UnifiedPanel
+            // 
+            this.checkBox_UnifiedPanel.AutoSize = true;
+            this.checkBox_UnifiedPanel.Location = new System.Drawing.Point(335, 39);
+            this.checkBox_UnifiedPanel.Name = "checkBox_UnifiedPanel";
+            this.checkBox_UnifiedPanel.Size = new System.Drawing.Size(89, 17);
+            this.checkBox_UnifiedPanel.TabIndex = 49;
+            this.checkBox_UnifiedPanel.Text = "Unified Panel";
+            this.checkBox_UnifiedPanel.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 450);
+            this.Controls.Add(this.checkBox_UnifiedPanel);
             this.Controls.Add(this.textBox_NoGeneratingText);
             this.Controls.Add(this.checkBox_NoGeneratingEnable);
             this.Controls.Add(this.label16);
@@ -764,6 +777,7 @@
         private System.Windows.Forms.TextBox textBox_NoGeneratingText;
         private System.Windows.Forms.CheckBox checkBox_NoGeneratingEnable;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.CheckBox checkBox_UnifiedPanel;
     }
 }
 

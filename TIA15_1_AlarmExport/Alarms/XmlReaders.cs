@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Diagnostics;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TIA15_1_AlarmExport
 {
@@ -122,7 +123,7 @@ namespace TIA15_1_AlarmExport
                 throw new Exception("Array Count not 32");
             }
         }
-        public static List<AlarmTag> ReadxmlDBAlarms(string path, List<UDTAlarms> udtAlarms)
+        public static List<AlarmTag> ReadxmlDBAlarms(string path, List<UDTAlarms> udtAlarms, PanelType panelType)
         {
             XmlDocument xmlDoc = new XmlDocument(); // Create an XML document object
             xmlDoc.Load(path); // Load the XML document from the specified file
@@ -197,16 +198,53 @@ namespace TIA15_1_AlarmExport
                                     if (langTextA.Count > 0 && _dataTypA == "Bool")
                                     {
                                         int _offset = offset;
-                                        switch (_offset % 16)
+                                        //diferent Tag/offset with diferent panel type
+                                        switch (panelType)
                                         {
-                                            case int n when (0 <= n && n <= 7):
-                                                _offset += 8;
+                                            case PanelType.WinccAdvance:
+                                                switch (_offset % 16)
+                                                {
+                                                    case int n when (0 <= n && n <= 7):
+                                                        _offset += 8;
+                                                        break;
+                                                    case int n when (8 <= n && n <= 15):
+                                                        _offset += -8;
+                                                        break;
+                                                    default:
+                                                        throw new Exception("Offset error (" + offset.ToString() + ")");
+                                                };
                                                 break;
-                                            case int n when (8 <= n && n <= 15):
-                                                _offset += -8;
+                                            case PanelType.WinccUnified:
+                                                switch (_offset % 16) //swap byte
+                                                {
+                                                    case int n when (0 <= n && n <= 7):
+                                                        _offset += 8;//7+8=15
+                                                        break;
+                                                    case int n when (8 <= n && n <= 15):
+                                                        _offset += -8;//15-8=7
+                                                        break;
+                                                    default:
+                                                        throw new Exception("Offset error (" + offset.ToString() + ")");
+                                                };
+                                                switch (_offset % 32)//swap word
+                                                {
+                                                    case int n when (0 <= n && n <= 15):
+                                                        _offset += 16;//0+16=16, 15+16=31
+                                                        break;
+                                                    case int n when (16 <= n && n <= 31):
+                                                        _offset += -16;//16-16=0, 31-16=15
+                                                        break;
+                                                    default:
+                                                        throw new Exception("Offset error (" + offset.ToString() + ")");
+                                                }
                                                 break;
+
+                                            /*case PanelType.WinccUnified:
+                                                _offset = offset;
+                                                break;
+                                                ;*/
                                             default:
-                                                throw new Exception("Offset error (" + offset.ToString() + ")");
+                                                throw new Exception("Wrong Panel type");
                                         }
 
 
@@ -224,7 +262,8 @@ namespace TIA15_1_AlarmExport
                                                udtAlarms.Find(x => x.Name.Equals(_dataTyp)),
                                                 ar,
                                                 _name,
-                                                "DB49.DBX"+ Addres.ToString()+".0"
+                                                "DB49.DBX" + Addres.ToString() + ".0",
+                                                Const.PanelTypeAlarmTagType(panelType)
                                                 , _DBname)
                                         );
                                 }
