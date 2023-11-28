@@ -521,7 +521,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.ConfirmationEventArgs.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -1174,7 +1174,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.ExclusiveAccess.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -1374,7 +1374,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HistoryEntry.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -1861,7 +1861,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Language.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -2180,7 +2180,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.LanguageSettings.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -2320,7 +2320,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MultilingualText.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -2442,7 +2442,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MultilingualTextItem.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -2730,7 +2730,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.NotificationEventArgs.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -2939,7 +2939,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Project.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -3493,7 +3493,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.ProjectTextResult.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -3716,7 +3716,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Transaction.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -3849,7 +3849,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.UmacCredentials.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -4004,7 +4004,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.UsedProduct.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -4285,7 +4285,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Cax.CaxProvider.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -4428,7 +4428,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Compare.CompareResult.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -4550,7 +4550,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Compare.CompareResultElement.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -4878,7 +4878,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Compiler.CompilerResult.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -5018,7 +5018,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Compiler.CompilerResultMessage.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -5291,7 +5291,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Connection.ConfigurationAddress.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -5518,7 +5518,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Connection.ConfigurationGateway.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -5738,7 +5738,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Connection.ConfigurationMode.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -5958,7 +5958,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Connection.ConfigurationPcInterface.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -6197,7 +6197,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Connection.ConfigurationSubnet.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -6423,7 +6423,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Connection.ConfigurationTargetInterface.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -6637,7 +6637,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Connection.ConnectionConfiguration.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -6805,7 +6805,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Download.DownloadProvider.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -6937,7 +6937,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Download.DownloadResult.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -7077,7 +7077,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Download.DownloadResultMessage.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -7405,7 +7405,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Download.Configurations.DownloadConfiguration.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -9116,7 +9116,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.Address.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -9812,7 +9812,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.Channel.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -23960,7 +23960,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.HardwareObject.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -24376,7 +24376,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.DeviceGroup.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -25629,7 +25629,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.HwIdentifier.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -25997,7 +25997,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.IoConnector.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -26306,7 +26306,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.IoController.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -26526,7 +26526,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.IoSystem.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -27292,7 +27292,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.Node.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -29010,7 +29010,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.Software.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -29152,7 +29152,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.Subnet.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -29523,7 +29523,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.TransferArea.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -29823,7 +29823,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.TransferAreaMappingRule.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -30226,7 +30226,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.Extensions.PlugLocation.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -30389,7 +30389,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.Features.HardwareFeature.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -31439,7 +31439,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HW.Utilities.HardwareUtility.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -31935,7 +31935,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Communication.Connection.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -32194,7 +32194,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Cycle.Cycle.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -32469,7 +32469,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Library.Types.LibraryType.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -32668,7 +32668,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Library.Types.LibraryTypeVersion.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -32894,7 +32894,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Globalization.MultiLingualGraphic.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -33219,7 +33219,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.RuntimeScripting.VBScript.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -33505,7 +33505,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.RuntimeScripting.VBScriptFolder.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -33916,7 +33916,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Screen.Screen.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -34202,7 +34202,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Screen.ScreenFolder.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -34336,7 +34336,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Screen.ScreenGlobalElements.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -34525,7 +34525,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Screen.ScreenOverview.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -34648,7 +34648,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Screen.ScreenPopup.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -34914,7 +34914,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Screen.ScreenPopupFolder.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -35254,7 +35254,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Screen.ScreenSlidein.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -35508,7 +35508,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Screen.ScreenSlideinSystemFolder.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -35678,7 +35678,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Screen.ScreenTemplate.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -35944,7 +35944,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Screen.ScreenTemplateFolder.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -36691,7 +36691,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Tag.Tag.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -36970,7 +36970,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Tag.TagFolder.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -37158,7 +37158,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.Tag.TagTable.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -37594,7 +37594,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.TextGraphicList.GraphicList.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -37853,7 +37853,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Hmi.TextGraphicList.TextList.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -38213,7 +38213,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.Common.HmiBase.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -38341,7 +38341,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.Common.HmiValidationResult.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -39082,7 +39082,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.HmiAlarm.HmiAlarmCommon.AlarmStatusVisuals.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -39445,7 +39445,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.HmiConnections.HmiConnection.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -40080,7 +40080,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.HmiLogging.HmiLoggingCommon.LogBackup.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -40208,7 +40208,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.HmiLogging.HmiLoggingCommon.LogDuration.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -40377,7 +40377,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.HmiLogging.HmiLoggingCommon.LogSegment.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -40511,7 +40511,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.HmiLogging.HmiLoggingCommon.LogSettings.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -40645,7 +40645,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.HmiLogging.HmiLoggingCommon.SegmentDuration.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -40879,7 +40879,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.HmiTags.HmiSubstituteValue.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -41032,7 +41032,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.HmiTags.HmiSystemTag.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -41252,7 +41252,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.HmiTags.HmiTag.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -41323,7 +41323,7 @@
         </member>
         <member name="P:Siemens.Engineering.HmiUnified.HmiTags.HmiTag.Comment">
             <summary>
-            Get/set comment of tag
+            MultilingualTextItemComposition for Comment property of Tag. Refer documentation for get and set of language specific comment
             </summary>
             <value></value>
         </member>
@@ -41636,7 +41636,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.HmiTags.HmiTagTable.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -41913,7 +41913,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.HmiTags.Range.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -42183,7 +42183,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.LoggingTags.HmiLoggingTag.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -42494,7 +42494,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.RuntimeSettings.HmiLanguageAndFont.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -42743,7 +42743,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.HmiUnified.RuntimeSettings.HmiRuntimeSetting.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -42946,7 +42946,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Library.GlobalLibrary.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -43322,7 +43322,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Library.GlobalLibraryInfo.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -43538,7 +43538,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Library.ProjectLibrary.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -43798,7 +43798,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Library.MasterCopies.MasterCopy.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -44134,7 +44134,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Library.MasterCopies.MasterCopyContentDescription.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -44347,7 +44347,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Library.MasterCopies.MasterCopyFolder.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -44775,7 +44775,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Library.Types.LibraryTypeFolder.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -44909,7 +44909,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Library.Types.LibraryTypeInstanceInfo.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -45482,7 +45482,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Library.Types.UpdateCheckResult.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -45604,7 +45604,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Library.Types.UpdateCheckResultMessage.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -45823,7 +45823,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.DriveObject.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -46091,7 +46091,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.DriveParameter.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -46373,7 +46373,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.OnlineDriveObject.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -46593,7 +46593,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.OnlineDriveObjectContainer.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -46715,7 +46715,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.Telegram.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -47039,7 +47039,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.DFI.ConfigurationEntry.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -47302,7 +47302,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.DFI.DriveDomainFunctions.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -47431,7 +47431,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.DFI.DriveFunctionInterface.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -47559,7 +47559,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.DFI.DriveObjectActivation.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -47694,7 +47694,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.DFI.DriveObjectFunctions.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -47822,7 +47822,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.DFI.DriveObjectType.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -48036,7 +48036,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.DFI.DriveObjectTypeHandler.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -48171,7 +48171,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.DFI.EncoderConfiguration.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -48293,7 +48293,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.DFI.HardwareProjection.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -48458,7 +48458,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.DFI.MotorConfiguration.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -48586,7 +48586,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.MC.Drives.DFI.OnlineDriveFunctionInterface.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -48955,7 +48955,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Online.OnlineProvider.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -49199,7 +49199,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.Fingerprint.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -49412,7 +49412,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.FingerprintProvider.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -49534,7 +49534,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.PlcChecksumProvider.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -49789,7 +49789,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.Blocks.PlcBlock.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -50392,7 +50392,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.Blocks.InterfaceSnapshot.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -50830,7 +50830,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.Blocks.PlcBlockGroup.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -51220,7 +51220,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.Blocks.PlcSystemBlockGroup.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -51586,7 +51586,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.Blocks.Supervision.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -51817,7 +51817,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.ExternalSources.PlcExternalSource.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -52070,7 +52070,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.ExternalSources.PlcExternalSourceGroup.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -52408,7 +52408,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.OpcUa.OpcUaCommunicationGroup.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -52530,7 +52530,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.OpcUa.OpcUaProvider.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -52652,7 +52652,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.OpcUa.ServerInterface.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -52913,7 +52913,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.OpcUa.ServerInterfaceGroup.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -53035,7 +53035,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.Tags.PlcConstant.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -53291,7 +53291,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.Tags.PlcTag.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -53622,7 +53622,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.Tags.PlcTagTable.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -53943,7 +53943,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.Tags.PlcTagTableGroup.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -54779,7 +54779,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.TechnologicalObjects.TechnologicalInstanceDBGroup.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -54956,7 +54956,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.TechnologicalObjects.TechnologicalParameter.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -55176,7 +55176,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.TechnologicalObjects.Motion.AxisEncoderHardwareConnectionInterface.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -55495,7 +55495,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.TechnologicalObjects.Motion.AxisHardwareConnectionProvider.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -55664,7 +55664,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.TechnologicalObjects.Motion.CamDataSupport.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -55830,7 +55830,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.TechnologicalObjects.Motion.EncoderHardwareConnectionProvider.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -55952,7 +55952,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.TechnologicalObjects.Motion.MeasuringInputHardwareConnectionProvider.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -56122,7 +56122,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.TechnologicalObjects.Motion.OutputCamHardwareConnectionProvider.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -56285,7 +56285,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.TechnologicalObjects.Motion.OutputCamMeasuringInputContainer.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -56413,7 +56413,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.TechnologicalObjects.Motion.SynchronousAxisMasterValues.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -56541,7 +56541,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.TechnologicalObjects.Motion.TorqueHardwareConnectionInterface.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -56750,7 +56750,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.Types.PlcType.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -56963,7 +56963,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.Types.PlcSystemTypeGroup.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -57324,7 +57324,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.Types.PlcTypeGroup.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -57732,7 +57732,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.WatchAndForceTables.PlcForceTable.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -58008,7 +58008,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.WatchAndForceTables.PlcTableCommentEntry.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -58381,7 +58381,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.WatchAndForceTables.PlcWatchAndForceTableGroup.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -58755,7 +58755,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.SW.WatchAndForceTables.PlcWatchTable.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -59074,7 +59074,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Settings.TiaPortalSetting.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -59294,7 +59294,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Settings.TiaPortalSettingsFolder.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -59468,42 +59468,6 @@
             <param name="index">The zero-based index of the item to get.</param>
             <returns>The element at the specified <paramref name="index"/>.</returns>
         </member>
-        <member name="T:Siemens.Engineering.Simotion.SimotionProvider">
-            <summary>
-            Provider for Simotion
-            </summary>
-        </member>
-        <member name="M:Siemens.Engineering.Simotion.SimotionProvider.Initialize">
-            <summary>
-            Initialize Scripting
-            </summary>
-            <returns>System.String</returns>
-        </member>
-        <member name="M:Siemens.Engineering.Simotion.SimotionProvider.Equals(System.Object)">
-            <summary>
-            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
-            </summary>
-            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
-            <returns>
-            <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
-            </returns>
-        </member>
-        <member name="M:Siemens.Engineering.Simotion.SimotionProvider.GetHashCode">
-            <summary>
-            Returns a hash code for this instance.
-            </summary>
-            <returns>
-            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
-            </returns>
-        </member>
-        <member name="M:Siemens.Engineering.Simotion.SimotionProvider.ToString">
-            <summary>
-            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
-            </summary>
-            <returns>
-            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
-            </returns>
-        </member>
         <member name="T:Siemens.Engineering.Upload.StationUploadProvider">
             <summary>
             Service provides station upload
@@ -59556,7 +59520,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Upload.StationUploadProvider.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -59692,7 +59656,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Upload.UploadResult.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -59838,7 +59802,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Upload.UploadResultMessage.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">
@@ -60110,7 +60074,7 @@
             <summary>
             Sets a list of values for the given <paramref name="attributes"/>.
             </summary>
-            <param name="attributes">The attributes value list.</param>
+            <param name="attributes">A <c>KeyValuePair</c> list containing the names and values of attributes to be set.</param>
             <exception cref="T:Siemens.Engineering.EngineeringNotSupportedException">Throws when any of the attribute name given in the list does not exist</exception>
         </member>
         <member name="M:Siemens.Engineering.Upload.Configurations.UploadConfiguration.global::Siemens#Engineering#IEngineeringObject#GetInvocationInfos">

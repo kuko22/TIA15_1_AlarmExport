@@ -64,7 +64,7 @@
   <ItemGroup>
     <Reference Include="Siemens.Engineering, Version=17.0.0.0, Culture=neutral, PublicKeyToken=d29ec89bac048f84, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PublicAPI\V17\Siemens.Engineering.dll</HintPath>
+      <HintPath>..\PublicAPI\V18\Siemens.Engineering.dll</HintPath>
     </Reference>
     <Reference Include="Spire.License, Version=1.3.8.46, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
       <HintPath>..\packages\FreeSpire.XLS.10.1.0\lib\net46\Spire.License.dll</HintPath>
